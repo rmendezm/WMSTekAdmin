@@ -3017,12 +3017,6 @@
       <CachedSettingsPropName>WebClient_ReportService2010_ReportingService2010</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\WMSTekCore\DataAccess\DataAccess.csproj">
-      <Project>{7A030330-74BE-4ABB-8CB4-7E2FA9DC6890}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
