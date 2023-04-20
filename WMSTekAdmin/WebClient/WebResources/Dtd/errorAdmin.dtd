@@ -1,0 +1,11 @@
+﻿<!ELEMENT messages (message)+>
+<!ELEMENT message (code, level, description+)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT level (#PCDATA)>
+<!ELEMENT severity (#PCDATA)>
+<!ELEMENT description (severity, title, detail, solutions)+>
+<!ATTLIST description language (ES | es | US | us ) #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT detail (#PCDATA)>
+<!ELEMENT solutions (solution)+>
+<!ELEMENT solution (#PCDATA)>

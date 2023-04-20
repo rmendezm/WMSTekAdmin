@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InboundOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InboundOrder">
+		      <xs:complexType>
+			      <xs:sequence>				     
+				      <xs:element name="Number" type="xs:string" />				      
+				      <xs:element name="Comment" type="xs:string" />				      
+				      <xs:element name="DateExpected" type="xs:dateTime" />
+				      <xs:element name="EmissionDate" type="xs:dateTime" />
+				      <xs:element name="ExpirationDate" type="xs:dateTime" />
+				      <xs:element name="Status" type="xs:unsignedByte" />				     
+				      <xs:element name="IsAsn" type="xs:unsignedByte" />
+				      <xs:element name="PercentLpnInspection" type="xs:integer" />
+				      <xs:element name="PercentQA" type="xs:integer" />
+				      <xs:element name="ShiftNumber" type="xs:integer" />
+				      <xs:element name="SpecialField1" type="xs:string" />
+				      <xs:element name="SpecialField2" type="xs:string" />
+				      <xs:element name="SpecialField3" type="xs:string" />
+				      <xs:element name="SpecialField4" type="xs:string" />
+              <xs:element name="Warehouse">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Code" type="xs:string" />
+                </xs:sequence>
+              </xs:complexType>
+              </xs:element>
+              <xs:element name="Owner">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="InboundType">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Vendor">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="OutboundOrder">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Number" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+				      <xs:element name="InboundDetails">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element maxOccurs="unbounded" name="InboundDetail">
+								      <xs:complexType>
+									      <xs:sequence>
+                          <xs:element name="LineNumber" type="xs:string" />
+										      <xs:element name="LineCode" type="xs:string" />										      
+										      <xs:element name="ItemQty" type="xs:decimal" />
+										      <xs:element name="Status" type="xs:unsignedByte" />
+										      <xs:element name="LineComment" type="xs:string" />
+										      <xs:element name="FifoDate" type="xs:dateTime" />
+										      <xs:element name="ExpirationDate" type="xs:dateTime" />
+										      <xs:element name="FabricationDate" type="xs:dateTime" />
+										      <xs:element name="LotNumber" type="xs:string" />
+										      <xs:element name="LpnCode" type="xs:string" />
+										      <xs:element name="Price" type="xs:decimal" />
+										      <xs:element name="SpecialField1" type="xs:string" />
+										      <xs:element name="SpecialField2" type="xs:string" />
+										      <xs:element name="SpecialField3" type="xs:string" />
+										      <xs:element name="SpecialField4" type="xs:string" />
+                          <xs:element name="Item">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Code" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="CategoryItem">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Code" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+									      </xs:sequence>
+								      </xs:complexType>
+				            </xs:element>
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+			      </xs:sequence>
+		      </xs:complexType>
+	      </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+	<xs:simpleType name="reqString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="boolean">
+		<xs:restriction base="xs:unsignedByte">
+			<xs:enumeration value="0" />
+			<xs:enumeration value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,9 @@
+﻿<!ELEMENT instances (instance+)>
+<!ELEMENT instance (parameter*)>
+<!ATTLIST instance name CDATA #REQUIRED>
+<!ATTLIST instance type CDATA #REQUIRED>
+<!ATTLIST instance assembly CDATA #REQUIRED>
+<!ELEMENT parameter (#PCDATA)>
+<!ATTLIST parameter name CDATA #REQUIRED>
+<!ATTLIST parameter type CDATA #REQUIRED>
+<!ATTLIST parameter value CDATA #REQUIRED>

@@ -1,0 +1,48 @@
+﻿<%-- GRID VIEW --%>
+<%-- Grilla Principal --%>
+<asp:GridView runat="server" CssClass="tableView" AutoGenerateColumns="False" CellPadding="0" RowStyle-Height="24px" CellSpacing="0"
+        RowStyle-Wrap="False" SelectedRowStyle-Wrap="False" PagerStyle-Wrap="False" HeaderStyle-Wrap="False"
+        FooterStyle-Wrap="False" EditRowStyle-Wrap="False" AlternatingRowStyle-Wrap="False"
+         UseAccessibleHeader="false">
+    <HeaderStyle BackColor="#696969" Font-Bold="True" ForeColor="White" CssClass="tableViewHeader"/>      
+    <FooterStyle CssClass="tableViewFooter" />
+    <RowStyle CssClass="tableViewRow" />
+    <EditRowStyle CssClass="tableViewEditRow" />
+    <SelectedRowStyle CssClass="tableViewSelectedRow" />
+    <PagerStyle CssClass="tableViewPager" />
+    <EmptyDataRowStyle CssClass="tableViewEmptyGrid"/>
+    <AlternatingRowStyle CssClass="tableViewAlternatingRow" />
+            
+    <PagerSettings mode="Numeric" pagebuttoncount="10"/>
+</asp:GridView>
+
+<%-- Grilla Detalle --%>
+<asp:GridView SkinId="grdDetail" runat="server" CssClass="tableView" AutoGenerateColumns="False" CellPadding="0"  CellSpacing="0" RowStyle-Height="24px" 
+        RowStyle-Wrap="False" SelectedRowStyle-Wrap="False" PagerStyle-Wrap="False" HeaderStyle-Wrap="False"
+        FooterStyle-Wrap="False" EditRowStyle-Wrap="False" AlternatingRowStyle-Wrap="False"
+         UseAccessibleHeader="false">
+    <HeaderStyle BackColor="#FBC568" Font-Bold="True" ForeColor="#333333"  CssClass="tableViewHeaderDetail"/>
+    <FooterStyle CssClass="tableViewFooter" />
+    <RowStyle CssClass="tableViewRow" />
+    <EditRowStyle CssClass="tableViewEditRow" />
+    <SelectedRowStyle CssClass="tableViewSelectedRow" />
+    <PagerStyle CssClass="tableViewPager" />
+    <EmptyDataRowStyle CssClass="tableViewEmptyGridDetail"/>
+    <AlternatingRowStyle CssClass="tableViewAlternatingRow" />
+</asp:GridView>
+
+<%-- TEXTBOX --%>
+<asp:TextBox runat="server" CssClass="txtDefault" />
+<asp:TextBox runat="server" CssClass="txtFilter" SkinId="txtFilter"/>
+<asp:TextBox runat="server" CssClass="txtModal" SkinId="txtModal"/>
+
+
+<%-- DROP-DOWN LIST --%>
+<asp:DropDownList runat="server" CssClass="ddlDefault" />
+<asp:DropDownList runat="server" CssClass="ddlFilter" SkinId="ddlFilter"/>
+<asp:DropDownList runat="server" CssClass="ddlModal" SkinId="ddlModal"/>
+
+<%-- BUTTON --%>
+<asp:Button runat="server" CssClass="btnDefault" SkinId="btnDefault"/>
+<asp:Button runat="server" CssClass="btnSmall" SkinId="btnSmall"/>
+<asp:Button runat="server" CssClass="btnSmallOn" SkinId="btnSmallOn"/>

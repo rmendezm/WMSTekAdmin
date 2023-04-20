@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="FILE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" name="HEADER">
+					<xs:complexType>
+						<xs:attribute name="TIPO_REG" type="xs:string" use="required" />
+						<xs:attribute name="NUMERO_ENVIO" type="xs:string" use="required" />
+						<xs:attribute name="FECHA" type="xs:string" use="required" />
+						<xs:attribute name="REFERENCIA" type="xs:string" use="required" />
+						<xs:attribute name="CODREMI" type="xs:string" use="required" />
+						<xs:attribute name="NOMRTE" type="xs:string" use="required" />
+						<xs:attribute name="DOMRTE" type="xs:string" use="required" />
+						<xs:attribute name="POBRTE" type="xs:string" use="required" />
+						<xs:attribute name="CP_ORI" type="xs:string" use="required" />
+						<xs:attribute name="NIFREMI" type="xs:string" use="required" />
+						<xs:attribute name="TELREMI" type="xs:string" use="required" />
+						<xs:attribute name="CODCONS" type="xs:string" use="required" />
+						<xs:attribute name="NOMCONS" type="xs:string" use="required" />
+						<xs:attribute name="DOMCONS" type="xs:string" use="required" />
+						<xs:attribute name="POBCONS" type="xs:string" use="required" />
+						<xs:attribute name="CP_REX" type="xs:string" use="required" />
+						<xs:attribute name="NIFCONS" type="xs:string" use="required" />
+						<xs:attribute name="TELCONS" type="xs:string" use="required" />
+						<xs:attribute name="CONTACTO" type="xs:string" use="required" />
+						<xs:attribute name="BULTOS" type="xs:string" use="required" />
+						<xs:attribute name="KILOS" type="xs:string" use="required" />
+						<xs:attribute name="PVKILOS" type="xs:string" use="required" />
+						<xs:attribute name="VOL" type="xs:string" use="required" />
+						<xs:attribute name="ML" type="xs:string" use="required" />
+						<xs:attribute name="SEMPOR" type="xs:string" use="required" />
+						<xs:attribute name="SEMPOR_R" type="xs:string" use="required" />
+						<xs:attribute name="SEMPOR_CR" type="xs:string" use="required" />
+						<xs:attribute name="REEMBOLSO" type="xs:string" use="required" />
+						<xs:attribute name="VALSEMER" type="xs:string" use="required" />
+						<xs:attribute name="PORTEPAG" type="xs:string" use="required" />
+						<xs:attribute name="REEXPAG" type="xs:string" use="required" />
+						<xs:attribute name="REC_DESE" type="xs:string" use="required" />
+						<xs:attribute name="SEGURPAG" type="xs:string" use="required" />
+						<xs:attribute name="COMREE_P" type="xs:string" use="required" />
+						<xs:attribute name="IMPSEMERP" type="xs:string" use="required" />
+						<xs:attribute name="IVAPAG" type="xs:string" use="required" />
+						<xs:attribute name="TOTALP" type="xs:string" use="required" />
+						<xs:attribute name="PORTEDEB" type="xs:string" use="required" />
+						<xs:attribute name="REEXDEB" type="xs:string" use="required" />
+						<xs:attribute name="DESEMBOL" type="xs:string" use="required" />
+						<xs:attribute name="SEGURDEB" type="xs:string" use="required" />
+						<xs:attribute name="COMREE_D" type="xs:string" use="required" />
+						<xs:attribute name="IMPSEMERD" type="xs:string" use="required" />
+						<xs:attribute name="IVADEB" type="xs:string" use="required" />
+						<xs:attribute name="TOTALD" type="xs:string" use="required" />
+						<xs:attribute name="OBSER1" type="xs:string" use="required" />
+						<xs:attribute name="OBSER2" type="xs:string" use="required" />
+						<xs:attribute name="SERVICIO" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ1" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ2" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ3" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ4" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ5" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ6" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ7" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ8" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ9" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ10" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ11" type="xs:string" use="required" />
+						<xs:attribute name="OBHOJ12" type="xs:string" use="required" />
+						<xs:attribute name="FECHA_EA" type="xs:string" use="required" />
+						<xs:attribute name="ETIQUETADO" type="xs:string" use="required" />
+						<xs:attribute name="LOINEX" type="xs:string" use="required" />
+						<xs:attribute name="LIBRE1" type="xs:string" use="required" />
+						<xs:attribute name="LIBRE2" type="xs:string" use="required" />
+						<xs:attribute name="FINAL" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="DETAIL">
+				  <xs:complexType>
+						  <xs:attribute name="TIPO_REG" type="xs:string" use="required" />
+						  <xs:attribute name="NUMERO_ENVIO" type="xs:string" use="required" />
+						  <xs:attribute name="KEYBUL" type="xs:string" use="required" />
+						  <xs:attribute name="BULCLI" type="xs:string" use="required" />
+						  <xs:attribute name="BULREF" type="xs:string" use="required" />
+						  <xs:attribute name="DENOM" type="xs:string" use="required" />
+						  <xs:attribute name="KILOS" type="xs:string" use="required" />
+						  <xs:attribute name="LARGO" type="xs:string" use="required" />
+						  <xs:attribute name="ANCHO" type="xs:string" use="required" />
+						  <xs:attribute name="ALTURA" type="xs:string" use="required" />
+						  <xs:attribute name="VOLUMEN" type="xs:string" use="required" />
+						  <xs:attribute name="LIBRE1" type="xs:string" use="required" />
+						  <xs:attribute name="LIBRE2" type="xs:string" use="required" />
+						  <xs:attribute name="LIBRE3" type="xs:string" use="required" />
+						  <xs:attribute name="LIBRE4" type="xs:string" use="required" />
+						  <xs:attribute name="OBSERV" type="xs:string" use="required" />
+						  <xs:attribute name="FINAL" type="xs:string" use="required" />
+				  </xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" name="FOOTER">
+				  <xs:complexType>
+						  <xs:attribute name="TIPO_REG" type="xs:string" use="required" />
+						  <xs:attribute name="NUMERO_ENVIO" type="xs:string" use="required" />
+						  <xs:attribute name="TIPODOC" type="xs:string" use="required" />
+						  <xs:attribute name="NUMERO" type="xs:string" use="required" />
+						  <xs:attribute name="DESCRIPCION" type="xs:string" use="required" />
+						  <xs:attribute name="SITUACION_O" type="xs:string" use="required" />
+						  <xs:attribute name="SITUACION_D" type="xs:string" use="required" />
+						  <xs:attribute name="GESTIONAR_DEV" type="xs:string" use="required" />
+				  </xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

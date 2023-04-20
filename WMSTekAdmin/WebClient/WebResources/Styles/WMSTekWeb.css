@@ -1,0 +1,1517 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+
+#5c87b2 --> R:92 G:135 B:178
+-------------------------------------------*/
+
+html, body
+{
+	background-color: #EDF6FF;
+	/*font-size: .75em;*/
+	font-family: Verdana, Helvetica, Sans-Serif;
+	margin: 0px;
+	padding: 0px;
+	color: #696969;
+	height:100%;
+	overflow:hidden; 
+}
+
+.contentBody {
+    background-color: #F1F3F4;
+    /*font-size: .75em;*/
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+    height: 100%;
+    overflow: hidden;
+}
+
+a:link {
+    text-decoration: none;
+    color: #C5CACF
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+a:active {
+	text-decoration: none;
+	color: white;
+} 
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+
+#header {
+	width: 100%;
+	color: #FFFFFF;
+	background-repeat: repeat-x;
+	height: 60px;
+	text-align: left;
+	position: relative;
+	background-color: #174686;
+}
+
+#logo img {
+    position: relative;
+    z-index: 3;
+    top: -7px;
+    height: 45px;
+}
+
+#gradiente {
+    z-index: 1;
+    position: absolute;
+    width: 800px;
+    top: 1px;
+    right: 0px;
+    height: 19px;
+}
+
+#main
+{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    /*width: 980px; */
+    width: 100%;
+    background-color: #5c87b2;
+}
+              
+#title
+{
+	float: left;
+	height: 40px; 
+	width: 270px;
+	margin-top: 2px;
+	margin-left: 10px;
+	background-color: #456B92;
+}
+
+#profile
+   {
+	color: #FFFFFF;
+	height: 15px;
+	font-size: 10px;
+	position: absolute;
+	width: auto;
+	padding-top: 0px;
+	background-repeat: no-repeat;
+	top: 2px;
+	z-index: 2;
+	right: 2px;
+}
+
+#navigationBar
+{
+	/*float:left;*/
+	height: 28px; 
+	width: 97%;
+	background-color:#FFD685;
+	margin-top: 1px;		
+	margin-left: 10px;	
+	padding-left: 10px;
+	padding-top: 10px;		
+}
+
+#navigationBarRight
+{
+	float: right;
+	height: 28px; 
+	width: 0px;
+	background-color:#FFD685;
+	margin-top: 1px;		
+	margin-right: 10px;			
+	padding-top: 10px;		
+	text-align: center;
+	visibility:hidden;
+}
+
+#mainContent
+{
+	width: 97%;
+	margin-top: 0px;	
+	margin-left: 10px;	
+	padding-left: 10px;	
+	padding-top: 10px;	
+}
+
+#mgrNuevo
+{
+	margin-top:15px;
+}
+
+/* MAIN PANELS 
+---------------*/
+
+.taskBarPanel {
+    width: auto;
+    float: left;
+    position: relative;
+    top: 44px;
+    left: 0;
+    border-color: #999999;
+    border-width: 1px;
+    background-color: #EDEDED;
+    border-bottom-style: solid;
+    margin-bottom: 0px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 10px;
+    height: 37px;
+    vertical-align: middle;
+    line-height: 37px;
+    z-index: 9999999;
+}
+
+.taskBarPanelItem
+{
+	float: left;
+	padding-left: 0px;
+	/*margin: 0px;*/
+}
+
+/* Status Bar */
+.statusBarPanel
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10px;
+	font-weight: normal;
+	width: 100%;
+	height: 25px;
+	max-height: 25px;
+	background-color: #ECE9D8;
+	color: #666666;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-top-color: #C0C0C0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding-top: 4px;
+	padding-left: 8px;
+	z-index: 2;
+}
+
+.statusBarPanelLeft
+{
+	padding-bottom: 6px;
+	padding-top: 2px;		
+	text-align: left;	
+	background-color: #ECE9D8;
+	max-height: 20px;	
+	padding-right: 8px;	
+	z-index: 20;
+	float:left;
+}
+
+.statusBarPanelRight
+{
+	padding-bottom: 6px;
+	padding-top: 2px;	
+	max-height: 20px;	
+	min-width: 126px;
+	z-index: 10;	
+	text-align: right;
+}
+
+.statusBarRecordInfo
+{
+	background-color: #ECE9D8;
+	position: absolute;
+	right: 15px;
+	bottom: 0px;
+	max-height: 20px;	
+	z-index: 10;
+}
+
+.statusBarPager
+{
+	float: left;
+	padding-right: 18px;
+	max-height: 20px;	
+	z-index: 10;	
+}
+
+/* FIN Status Bar */
+
+/* Main Filter */
+.mainFilterPanel {
+    width: auto;
+    height: 45px;
+    position: relative;
+    top: 44px;
+    left: 0px;
+    margin-bottom: 0px;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    font-weight: normal;
+    font-size: 8pt;
+    vertical-align: middle;
+    border-width: 1px;
+    border-bottom-style: solid;
+    border-color: #999999;
+    background-color: #EDEDED;
+    padding: 1px;
+    padding-bottom: 2px;
+    z-index: 9999998;
+}
+
+.mgrFilterPanel
+{
+	border-style: solid;
+	border-width: 2px 4px 4px 2px;
+	border-color: #F2F2F2;
+	width: auto;
+	height: 48px;
+	background-color: #FFFFE6;
+	margin-bottom: 3px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;
+	vertical-align: middle;
+	left: 0px;
+	top: 0px;
+	position:relative; 
+}
+
+.advancedFilterPanel {
+    background-color: #EAF3FF;
+    border-color: #95C2FF;
+    border-width: 1px;
+    border-bottom-style: solid;
+    margin-bottom: 5px;
+    z-index: 100000;
+    position: relative;
+    margin-top: 25px;
+}
+
+.divAdvancedFilterOptions
+{
+	padding-top: 1px;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	margin-right: 2px;
+	margin-top: 8px;
+	float: right;	
+}
+
+.divAdvancedFilterOption
+{
+	background-color: transparent;
+	background-image: url(../../WebResources/Images/Buttons/Filter/btn_bg20.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #6996D7;
+	padding-left: 6px;
+	padding-top: 2px;
+	padding-right: 6px;
+	padding-bottom: 2px;
+	float: left;
+	height: 15px;
+	overflow: hidden;
+	margin-left: 2px;
+	margin-right: 6px;
+	margin-top: 1px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;
+	line-height: 15px;
+	vertical-align: middle;
+	cursor: pointer;
+	color: #555555;
+    min-height: 22px;
+}
+
+.divAdvancedFilterOptionChk
+{
+	clear: both;
+	padding-left: 0px;
+	padding-right: 5px;	
+}
+	
+.mainFilterPanelItem
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 0px;
+	float: left;
+	margin: 4px;
+	margin-right: 3px;
+	text-align: left;
+}
+
+.mainFilterPanelItemNarrow
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 0px;
+	float: left;
+	margin: 2px;
+	text-align: left;
+}
+
+.mainFilterPanelTabItem
+{
+	vertical-align: middle;
+	margin: 2px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;
+}
+
+.mainFilterTabs
+{
+	width:auto;
+	height:125px;	
+} 
+
+.divMainFilterFloatLeft
+{  
+	float: left;
+	margin-top: 6px;
+	margin-right: 8px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	text-align: left; 
+}
+
+.divMainFilterFloatLeftNarrow
+{  
+	float: left;
+	width: 130px; 
+	margin-top: 6px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	text-align: left; 
+}
+.divMainFilterFloatLeftCheckBox
+{  
+	float: left;
+	width: 300px; 
+	margin-top: 6px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	text-align: left; 
+}
+
+.mainFilterPanelItemNarrow0
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 0px;
+	float: left;
+	margin: 0px;
+	text-align: left;
+}
+
+#ctl00_divMainFilter
+{
+    height: 48px;
+	/*margin-top: 15px;*/
+}
+
+#ctl00_ucTaskBarContent_divTaskBar
+{
+    height: 45px;
+}
+/* FIN Main Filter */
+
+/* Lookup Panel */
+.mgrFilterPanelLookUp
+{
+	width: 100%;
+	margin-bottom: 6px;
+	height: 48px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;	
+}
+
+.mgrFilterPanelFloat
+{
+	float: left;
+	margin-right: 5px;
+}
+
+.divLookupGrid
+{
+	max-height:280px;
+	width: 380px;
+	height: 100%;
+	overflow:auto;
+	margin-left: 5px;
+} 
+
+/* FIN Lookup Panel */
+
+/* GRID VIEW 
+----------------------------------------------------------*/
+.divGrid
+{
+    height: auto;
+    width:100%;
+    /*height: auto;*/
+    overflow:auto; 
+}
+    
+.divRightPanel
+{
+    position:absolute;  
+    top: 0px;  
+    bottom: 0px; 
+    left: 0px;
+    width:auto;
+    height: auto;
+    overflow:auto; 
+}
+.divRightPanelItem
+{
+    position:absolute;  
+    top: 42px;  
+    bottom: 0px; 
+    left: 0px;
+    width:auto;
+    height: auto;
+    overflow:auto; 
+}
+.divFilterItemCenter
+{
+    position:relative;  
+    bottom: 1px; 
+    width:auto;
+    height: auto;
+    overflow:auto; 
+    left:10px;
+}
+  
+.divGridRightPanel
+{
+	padding: 6px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.divItemDetails
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 11px;
+	border: 1px solid #C0C0C0;
+	background-color: #f5f5f5;
+	padding: 6px;
+	width: 80%;
+	height: auto;
+	margin: 10px; 
+	position:static;
+}
+
+.divGridDetail
+{
+	clear: both;
+	margin: 5px;
+	margin-top: 8px;
+	overflow: hidden;
+	height: auto;
+	position: relative;
+}
+
+.divGridDetailScroll
+{
+	clear: both;
+	margin: 5px;
+	margin-top: 8px;
+	height: auto;
+	position: relative;
+}
+
+.divGridDetailTitle
+{
+	margin: 2px;
+	margin-bottom: 5px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 8pt;
+}
+
+.divGridTitle
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 6px;
+	margin-left: 3px;
+}
+
+.divGridTitleDispatch
+{
+    font-family: Verdana, Helvetica, Sans-Serif;
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 3px;
+    margin-top: 3px;
+    width: auto;
+    vertical-align: middle;
+    background-color:White;
+}
+
+.divCenter
+{
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;	
+    width: auto;
+    float: left;	
+    padding: 2px;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+.divRight
+{
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 11px;	
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: table-cell;
+    vertical-align: middle;	
+    width: auto;
+    padding: 0px;
+    padding-top: 10px;
+    padding-right: 5px;
+}
+
+
+.divGridLabelItem
+{
+    width: auto;
+    height:95%;
+    overflow:scroll;
+    margin-left: 5px;
+	margin-top: 10px;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	float:left;
+}
+
+.divGridMarginLeft{
+    margin-left: 10px;
+}
+
+/*---------------------------------------------------------------*/
+
+.height30Porc
+{
+	 height:30%;	
+}
+
+.centerButtons
+{
+	margin-top: 4px;
+	padding: 6px;
+	/*clear: both;*/
+	text-align: center;	
+}
+
+/* DIVS PRINCIPALES
+----------------------------------------------------------------- */
+/*iframe
+{
+	overflow-y: hidden;
+}*/
+
+.divContenido
+{
+	width: 100%;
+	/*background-color: #FFFFCE;*/
+}
+
+	
+.divCtrsFloatLeft
+{
+	float: left; /*margin-left: 3px;*/ /*margin-top: 3px;*/ /*margin-right: 2px;*/ /*margin-bottom: 3px; */ /*background-color: #eaf3ff;*/ /*background-color: #F2F2F2;*/
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt; 
+	/*background-color: #FFFFCC;
+	margin-right: 4px;
+	margin-left: 4px;*/
+}
+
+.divCtrsFloatRight {
+    float: right; 
+    font-family: Verdana, Helvetica, Sans-Serif;
+    font-size: 10pt;
+}
+
+.divSimulation
+{
+	float: left;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background-color: #F2F2F2;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 5px;
+	border: 1px solid #C0C0C0;
+	height: 100%; /*532px; */
+	width: 37%;
+}
+
+.divPrintLabel
+{
+	border: 1px none #C0C0C0;
+	margin-left: 2px;
+	margin-top: 5px;
+	margin-right: 2px;
+	margin-bottom: 8px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 2px;
+	height: 50px; 
+}
+
+.divTree
+{
+	background-color: #F2F2F2;
+	height: 100%;
+}
+
+.divCtrsFloatLeftWide
+{
+	float: left;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background-color: #F2F2F2;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 5px;
+	border: 1px solid #C0C0C0;
+	width: auto;
+	overflow:scroll;
+	height:300px;
+	width:600px
+}
+
+.divFloatLeftTransparent
+{
+	float: left;
+	margin-left: 3px;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 5px;
+	width: auto;
+}
+
+.divItemDetailWide
+{
+	float: left;
+	margin-left: 20px;
+	margin-top: 3px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	background-color: #F2F2F2;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	padding: 5px;
+	border: 1px solid #C0C0C0;	
+}
+
+.divFloatRight
+{
+	border: 1px solid #C0C0C0;
+	float: left;
+	height: 400px;
+	width: 350px;
+	margin-top: 26px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	background-color: #F2F2F2;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	padding: 5px;
+}
+
+.divHeader
+{
+	width: 100%;
+	/*background-color: #456B92;*/
+	margin: 0px;
+	padding: 0px;
+}
+
+.divMain
+{
+	width: 100%;
+	height: 100%;
+	background-color: #F1F1F1;
+	font-size: 11px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	margin: 0px;
+	padding: 0px;
+}
+
+.divMessage
+{
+	margin: 20px;
+	padding: 6px;
+	height: 20px;
+	width: 300px;
+	/*background-color: #ECE9D8;*/
+	font-weight: bold;
+	left: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: italic;
+	text-align: center;
+}
+
+.divErrorPanel {
+    margin: 8px 8px 0px 8px;
+    border: 1px solid #C0C0C0; /*border: 1px solid #999999;*/
+    height: auto;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    font-weight: normal;
+    width: auto;
+    color: Black; /*background-color: #6996d7;*/
+    background-color: #ffffff;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.divDialogPanel {
+    margin: 8px;
+    border: 1px solid #C0C0C0;
+    /*border: 1px solid #999999;*/
+    height: auto;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    font-weight: normal;
+    width: auto;
+    color: Black;
+    background-color: #ffffff;
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.divErrorLevel
+{
+	width: 48px;
+	/*float: left;*/
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.divErrorTitle
+{
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+	padding-left: 80px;
+	position: absolute;
+	top: 60px;
+}
+
+.divErrorMessage
+{
+	font-size: 12px;
+	font-weight: normal;
+	padding-left: 80px;
+}
+
+.divErrorSolution
+{
+	font-size: 10px;
+	font-weight: bold;
+	padding-left: 80px;
+	padding-bottom: 5px;
+}
+
+.divErrorAditionalInfo
+{
+	font-size: 10px;
+	font-weight: normal;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.divErrorSeverity
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 10px;
+	/*width: 500px;*/
+}
+
+.divDivisionLine
+{
+	border-width: 1px;
+	border-color: #cccccc;
+	border-top-style: dotted;
+	height: 2px;
+	width: 490px;
+	float: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.divDialogLevel
+{
+	width: auto;
+	float: left;
+	position: relative;
+	/*margin-top: 15px;*/
+	margin-left: 10px;
+}
+
+.divExceptionPanel
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width: 600px;
+}
+
+.divExceptionSeverity
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 11pt;
+	width: 600px;
+}
+
+.divExceptionMessage
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width: 600px;
+}
+
+.divErrorPanelNotWide
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	height: 80px;	
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width: 75%;
+	color: #000000;
+	background-color: #F8CC81;
+}
+
+.divErrorSeverityNotWide
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 11pt;
+	width: 75%;
+}
+
+.divErrorViewDetails
+{
+	position: absolute;
+	padding-top: 5px;
+	left: 25px;
+	vertical-align: middle;
+	color: #0066FF;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 8pt;
+}
+
+.divErrorLink
+{
+	color: #0066FF;
+	text-decoration: underline;
+	cursor: pointer;
+	font-size: 8pt;
+}
+
+.divErrorNoLink
+{
+	font-size: 8pt;
+}
+
+.divGenericErrorSolution
+{
+	padding-left: 80px;
+}
+
+.divExceptionPanelNotWide
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width:75%
+}
+
+.divExceptionSeverityNotWide
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 11pt;
+	width:75%
+}
+
+.divExceptionMessageNotWide
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width:75%
+}
+
+
+
+
+
+.divButtons
+{
+	margin-top:10px;
+	margin-left:5px;
+	width:600px;
+}
+
+
+
+
+.chkParent
+{
+	margin-top:2px;
+	margin-left:10px;
+	width:400px;
+}
+
+.chkChild
+{
+	margin-top:2px;
+	margin-left:10px;
+	width:400px;
+}
+
+.divSeparador
+{
+	height:10px
+}
+
+/* MAIN MENU 
+-------------*/
+
+#barra_menu  {
+	height: auto;
+	width: 100%;
+	text-align: center;
+}
+
+#barra_menu #menu {
+	position: absolute;
+	left: 208px;
+	top: 17px;
+}
+
+.MenuBarHorizontal
+{
+	cursor: default;
+	margin: 4px;
+	padding: 0px;
+	z-index: 10000;/*No eliminar esto ya que permite que se vea bien en explorer 8*/
+}
+
+.MenuBarHover
+{
+	color: #333333;
+	background-image: url(../images/menu/bg_btn_activo.gif);  
+	border: 1px solid #FFBD69;
+	background-repeat:  repeat-x;
+	z-index: 1000000;
+}
+
+.MenuBarDynamic
+{
+	border: 1px solid #FFBD69;
+	z-index: 1000000;
+}
+
+.MenuBarItem
+{
+	border: 1px solid #E4EDFC;
+	margin: 0px;
+	font-size: 11px;
+	z-index: 1000000;
+	background-color: #F6F6F6;
+	text-align: left;
+}
+
+.MenuBarHeader
+{
+	border: 1px solid transparent;    
+	margin: 0px;
+	margin-left: 4px;
+	font-size: 11px;
+	z-index: 1000000;
+}
+
+#cerrar_sesion {
+    height: auto;
+    width: 21px;
+    position: fixed;
+    top: 7px;
+    cursor: pointer;
+    color: white;
+    z-index: 3;
+    left: 98%;
+}
+
+
+/* DIVS ESPECIALES
+------------------------------------------------------------ */
+
+.divValidationSummary
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt; 
+	width:auto;
+	float:left;
+	/*width: 180px;*/
+}
+
+.divFindItem
+{
+	float: left;
+	vertical-align: middle;
+	margin-right: 5px;
+	width:350px;
+	
+}
+/*------------------------------------------------------------------------------------------------------*/
+/*GRILLA CON SELECCION DE ITEMS*/
+
+.LetraNormal {color:#000000;text-decoration: none;font-size: 8pt;font-style:normal;font-weight:normal}
+
+.grid td, .grid th
+{
+    height:14px;
+    border-right:solid 1px #fff;
+    vertical-align:middle;
+}
+
+.grid th
+{
+	background-color:#EFEFEF;
+	font-weight:normal;
+	border-color:#ccc;
+}
+
+.grid td
+{
+    vertical-align:middle;
+    cursor:pointer;
+    border-color:#EFEFEF;
+}
+
+.altrowstyle 
+{
+	background-color:#EFEFEF;}
+
+.pagerstyle {font-size:x-small;text-align:right;background:url(../../images/bcktop.gif) repeat-x;
+    background-position: bottom left;}
+    
+.SelectedRow { background-color:#ff0000;color:#fff}
+
+/*FIN GRILLA CON SELECCION DE ITEMS*/
+
+/* Modal Update Progress */
+.divProgress
+{
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 5px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 10pt;
+	width: auto;
+	height: auto;
+	background-color: #FFFFCC;
+}
+
+.updateProgress
+{
+	position: absolute;
+	background-color: #fff;
+	filter: alpha(opacity=70);
+	MozOpacity: 0.7;
+	opacity: 0.7;
+	padding: 0px;
+	margin: 0px;
+    z-index: 100000000 !important;
+}
+
+.updateProgress div
+{
+	background-color: white;
+	padding: 4px;
+	position: absolute;
+	top: 10%;
+	left: 50%;
+}
+
+/* FIN Modal Update Progress */
+
+.divDetailPackage
+{
+	width: auto;
+	height: auto;
+	margin: 1px;
+}
+
+.pageHeader
+{
+	margin: 8px;
+	margin-bottom: 12px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Verdana, Helvetica, Sans-Serif;	
+	vertical-align: middle;
+}
+
+/* PermissionMgr Section */
+
+.divFloatLeft
+{
+	float: left;
+}
+
+.divFloatLeftHeader
+{
+	border-style: solid;
+	border-width: 1px 1px 0px 1px;
+	border-color: #696969;
+	height: 20px;
+	width: 280px;
+	margin-left: 8px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	background-color: #696969;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	padding: 3px 5px 5px 5px;
+	color: #FFFFFF;
+}
+
+.divFloatLeftBody
+{
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	border-color: #C0C0C0;
+	float: left;
+	width: 290px;
+	margin-left: 8px;
+	margin-top: 0px;
+	margin-right: 18px;
+	background-color: #FFFFFF;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 0px;
+	overflow: auto;
+	position: absolute;
+	top: 73px;
+	bottom: 15px;
+}
+
+.divFloatLeftHeaderNarrow
+{
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #696969;
+	height: 18px;
+	width: 230px;
+	margin-left: 8px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	background-color: #696969;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: bold;
+	font-size: 10pt;
+	padding: 3px 5px 5px 5px;
+	color: #FFFFFF;
+}
+
+.divFloatLeftBodyNarrow
+{
+	border-style: none;
+	float: left;
+	width: 260px;
+	margin-left: 8px;
+	margin-top: 0px;
+	margin-right: 15px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-size: 10pt;
+	padding: 0px;
+	overflow: auto;
+	position: absolute;
+	top: 73px;
+	bottom: 15px;
+}
+
+.btnSave
+{
+	margin-left: 4px;
+	vertical-align: middle;
+}
+
+/* FIN PermissionMgr Section */
+
+/* Inventory Consult Section */
+.divInventoryDetail
+{
+	width: 100%;
+	height: auto;
+	background-color: #FBFAF7;
+	margin: 0px;
+	padding: 2px;
+	margin-bottom: 4px;
+}
+
+.inventoryHeader
+{
+	padding: 4px;
+	margin-right: 2px;
+	width: auto;
+	border-bottom-style: solid;
+	border-bottom-color: #DDD8B9;
+	border-bottom-width: 1px;
+}
+ 
+.divInventoryGrid
+{
+	position:absolute;  
+    top: 118px; 
+    bottom: 25px;
+    height: auto;
+    width:100%;
+    display: table;
+    overflow:auto; 
+    z-index: 0;
+}
+/* FIN Inventory Consult Section */
+  
+/* Calendario Filtro */
+.calendarDatePickerButton
+{
+	left: 0px;
+	padding: 1px;
+	margin: 0px;
+	display: inline;
+	text-align: left;
+	vertical-align: top;
+}
+
+/* FIN Calendario Filtro */
+
+/* Splitter */
+.splitterLeftPanel
+{
+	background-color: White;
+}
+/* FIN Splitter */
+
+.TypeUnit
+{
+	font-size: 7pt;
+}
+
+/*Inicio - Div Bloquea Pantalla*/
+.modalLoading
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: Gray; 
+    Filter: Alpha(Opacity=50);
+    opacity: 0.5; 
+    z-index: 50000000;
+}
+.loading
+{
+    width: 300px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    z-index: 50000001;
+}
+/*Fin - Div Bloquea Pantalla*/
+
+.ob_spl_toppanelcontent {
+    overflow:visible !important;
+}
+
+.ob_spl_bottompanelcontent {
+    overflow:visible !important;
+}
+
+/* path paginas */
+#pagePath {
+    display: inline-block;
+    cursor: default;
+    position: relative;
+    top: -12px;
+    left: 15px;
+}
+
+.breadcrumb {
+    display: inline-block !important;
+    padding: 1px 5px !important;
+    margin-left: 10px !important;
+    margin-top: 15px !important;
+}
+
+.breadcrumbCustom {
+    font-size: 12px;
+}
+
+.breadcrumbCustom > li {
+    color: #375A74;
+}
+
+.breadcrumbCustom > li.active {
+    color: black;
+    font-weight: bold;
+}
+/* fin path paginas */
+
+#ctl00_divTop {
+    margin-top: 42px;
+}
+
+#ctl00_ucMainFilterContent_rblSearchCriteriaFind tr {
+    display: inline;
+}
+
+#ctl00_ucMainFilterContent_divImpressionTail {
+    margin-top: 15px;
+}
+
+/* footer gridview */
+.pagination-ys {
+    /*display: inline-block;*/
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.pagination-ys table > tbody > tr > td {
+    display: inline;
+}
+
+.pagination-ys table > tbody > tr > td > a,
+.pagination-ys table > tbody > tr > td > span {
+    position: relative;
+    float: left;
+    padding: 8px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #0066CC;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    margin-left: -1px;
+}
+
+.pagination-ys table > tbody > tr > td > span {
+    position: relative;
+    float: left;
+    padding: 8px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    margin-left: -1px;
+    z-index: 2;
+    color: #aea79f;
+    background-color: #f5f5f5;
+    border-color: #dddddd;
+    cursor: default;
+}
+
+.pagination-ys table > tbody > tr > td:first-child > a,
+.pagination-ys table > tbody > tr > td:first-child > span {
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.pagination-ys table > tbody > tr > td:last-child > a,
+.pagination-ys table > tbody > tr > td:last-child > span {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.pagination-ys table > tbody > tr > td > a:hover,
+.pagination-ys table > tbody > tr > td > span:hover,
+.pagination-ys table > tbody > tr > td > a:focus,
+.pagination-ys table > tbody > tr > td > span:focus {
+    color: #97310e;
+    background-color: #eeeeee;
+    border-color: #dddddd;
+}
+
+.linkDecoration {
+    text-decoration: underline !important; 
+    color: grey !important;
+}
+
+.logoMenu {
+	margin-top: 10px;
+}

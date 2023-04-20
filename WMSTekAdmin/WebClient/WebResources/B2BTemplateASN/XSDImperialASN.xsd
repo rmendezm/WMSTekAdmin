@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="data">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="record">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nro_Orden_de_Compra" type="xs:string" />
+              <xs:element name="Nro_Guía_Proveedor" type="xs:unsignedInt" />
+              <xs:element name="Tienda" type="xs:string" />
+              <xs:element name="LPN" type="xs:string" />
+              <xs:element name="Código_Producto_Imperial" type="xs:string" />
+              <xs:element name="Código_Producto_Proveedor" type="xs:string" />
+              <xs:element name="EAN_13" type="xs:string" />
+              <xs:element name="Unidad_Medida" type="xs:string" />
+              <xs:element name="Cantidad_Entrega" type="xs:unsignedByte" />
+              <xs:element name="Lote" type="xs:string" />
+              <xs:element name="Dirección_Despacho" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

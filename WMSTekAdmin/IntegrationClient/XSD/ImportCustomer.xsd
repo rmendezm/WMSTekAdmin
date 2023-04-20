@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Customers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Customer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" />
+              <xs:element name="Name" type="xs:string" />
+              <xs:element name="Address1Fact" type="xs:string" />
+              <xs:element name="Address2Fact" type="xs:string" />
+              <xs:element name="PhoneFact" type="xs:string" />
+              <xs:element name="FaxFact" type="xs:string" />
+              <xs:element name="Address1Delv" type="xs:string" />
+              <xs:element name="Address2Delv" type="xs:string" />
+              <xs:element name="PhoneDelv" type="xs:string" />
+              <xs:element name="FaxDelv" type="xs:string" />
+              <xs:element name="Email" type="xs:string" />
+              <xs:element name="Priority" type="xs:unsignedByte" />
+              <xs:element name="TimeExpected" type="xs:unsignedByte" />
+              <xs:element name="ExpirationDays" type="xs:unsignedByte" />
+              <xs:element name="SpecialField1" type="xs:string" />
+              <xs:element name="SpecialField2" type="xs:string" />
+              <xs:element name="SpecialField3" type="xs:string" />
+              <xs:element name="SpecialField4" type="xs:string" />
+              <xs:element name="Owner">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <!--<xs:element name="CityFact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="StateFact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CountryFact">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CityDelv">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="StateDelv">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="CountryDelv">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>-->
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

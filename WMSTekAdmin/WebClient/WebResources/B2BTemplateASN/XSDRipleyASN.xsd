@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CABECERA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="DETALLE">
+          <xs:complexType>
+            <xs:attribute name="NRO_BULTO" type="xs:string" use="required" />
+            <xs:attribute name="FEC_BULTO" type="xs:string" use="required" />
+            <xs:attribute name="SKU_CLIENTE" type="xs:string" use="required" />
+            <xs:attribute name="SKU_COMPANIA" type="xs:string" use="required" />
+            <xs:attribute name="CANTIDAD" type="xs:integer" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="RUT_PROVEEDOR" type="xs:string" use="required" />
+      <xs:attribute name="DESC_DOC_DESPACHO" type="xs:string" use="required" />
+      <xs:attribute name="NRO_DOC_DESPACHO" type="xs:string" use="required" />
+      <xs:attribute name="DOC_ES_ELECTRONICO" type="xs:string" use="required" />
+      <xs:attribute name="OC" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

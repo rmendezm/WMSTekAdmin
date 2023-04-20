@@ -1,0 +1,206 @@
+﻿    /* modal */
+    .modalControls{
+        border: none !important;
+    }
+     
+    .ajax__tab_tab{
+        height: 20px !important;
+    }
+
+    /* modal fin */
+
+    /* checkbox */
+    .height-filter{
+        /*height: 30px;*/
+        font-size: 12px;
+    }
+
+    .height-filter > label.checkbox-inline:first-child{
+        margin-left: 10px;
+    }
+
+    .checkbox-inline{
+        padding-bottom: 4px;
+    }
+
+    /* gridview */
+    .table-NoDragAndDrop tbody tr:hover > td,  .table-dragAndDrop tbody tr:hover > td{
+      background-color: rgb(221, 236, 255);
+    }
+
+    .acceptDAD{
+        cursor: grab;
+        cursor: -webkit-grab;
+    }
+
+.header-grid {
+    /*background-color: #286090;*/
+    background-color: #174686;
+    color: white;
+}
+
+    .table-curved {
+        border-collapse: separate;
+        /*border: solid #ccc 1px;*/
+        border-radius: 10px;
+        border-left:0px;
+    }
+    .table-curved td, .table-curved th {
+        /*border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;*/
+    }
+    .table-curved th {
+        border-top: none;
+    }
+    .table-curved th:first-child {
+        border-radius: 10px 0 0 0;
+    }
+    .table-curved th:last-child {
+        border-radius: 0 10px 0 0;
+    }
+    .table-curved th:only-child{
+        border-radius: 10px 10px 0 0;
+    }
+    .table-curved tr:last-child td:first-child {
+        border-radius: 0 0 0 10px;
+    }
+    .table-curved tr:last-child td:last-child {
+        border-radius: 0 0 10px 0;
+    }
+
+    .table-dragAndDrop{
+        font-size: 10px;
+    }
+
+    .table-NoDragAndDrop{
+        font-size: 10px;
+    }
+
+    div.container > div.row-height-filter {
+        max-height: 40px;
+        margin-bottom: 10px;
+        overflow: auto;
+        margin-top: 5px;
+    }
+
+    .limitDiv{
+        overflow:auto;
+    }
+
+    .table-dragAndDrop > tbody > tr:nth-child(odd)  {
+        background-color:#e8e6e5;
+    }
+
+    .table-dragAndDrop > tbody > tr:nth-child(odd):hover  {
+        background-color:rgb(221, 236, 250);
+    }
+
+    .table-NoDragAndDrop > tbody > tr:nth-child(odd)  {
+        background-color:#e8e6e5;
+    }
+
+    .table-NoDragAndDrop > tbody > tr:nth-child(odd):hover  {
+        background-color:rgb(221, 236, 250);
+    }
+	
+	.table-dragAndDrop > tbody > tr.redAlert {
+        background-color: #F2DEDE;
+    }
+
+    .table-dragAndDrop > tbody > tr.redAlert span {
+        color: #A94442;
+	    font-weight: bold;
+    }
+
+    .table-dragAndDrop > tbody > tr.yellowAlert {
+        background-color: #f1f1de;
+    }
+
+    .table-dragAndDrop > tbody > tr.yellowAlert span {
+        color: #a7a841;
+	    font-weight: bold;
+    }
+
+    .table-dragAndDrop > tbody > tr.greenAlert {
+        background-color: #def0df;
+    }
+
+    .table-dragAndDrop > tbody > tr.greenAlert span {
+        color: #41a84e;
+	    font-weight: bold;
+    }
+
+    .table-dragAndDrop > tbody > tr.blueAlert {
+        background-color: #CCE5FF;
+    }
+
+    .table-dragAndDrop > tbody > tr.blueAlert span {
+        color: #0064cc;
+        font-weight: bold;
+    }
+
+    .table-dragAndDrop > tbody > tr.successAlert {
+        background-color: #B2D5CA;
+    }
+
+    .table-dragAndDrop > tbody > tr.successAlert span {
+        color: darkgreen;
+        font-weight: bold;
+    }
+
+     /* La primera fila de checkbox parte muy a la derecha, Se corrige con esta sentencia */
+    /*@media (min-width: 651px) and (max-width: 1018px) {
+        div.container > div.row:first-child{
+            display: inline-block;
+            height: 50px;
+        }
+    }*/
+     
+    /* Se esconde div de checkbox */
+    /*@media (max-width: 650px) {
+        div.container > div.row:first-child{
+            visibility: hidden;
+        }
+    }*/
+    
+    /*@media (min-width: 325x) and (max-width: 331px)  {
+        div.froze-header-grid{
+            max-height: 414px;
+        }
+    }*/
+
+    /* Se esconde grilla */
+    /*@media (max-width: 324px) {
+    div.froze-header-grid > table{
+        display:none;
+    }
+
+    div.froze-header-grid{
+        visibility: hidden;
+    }
+}*/
+    
+    .froze-header-grid{
+        max-height: 100%;
+    }
+
+
+    @media (max-width: 590px) {
+        .mainFilterPanel, #ctl00_ucTaskBarContent_divTaskBar, #ctl00_divMainFilter {
+            display: none;
+        }
+
+        #ctl00_divTop {
+            padding-top: 20px;
+        }
+
+        .yellowlighting_titlePath {
+            display: none;
+        }
+
+        div.row-height-filter {
+            display: none;
+        }
+    }
+
+   

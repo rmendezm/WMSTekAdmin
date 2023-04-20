@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ItemUom">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element name="Code" type="xs:string" />
+				<xs:element name="ConversionFactor" type="range084" />
+				<xs:element name="BarCode" type="xs:string" />
+				<xs:element name="Name" type="xs:string" />
+				<xs:element name="Length" type="range044" />
+				<xs:element name="Width" type="range044" />
+				<xs:element name="Weight" type="range044" />
+				<xs:element name="Height" type="range044" />
+				<xs:element name="Volume" type="range044" />
+				<xs:element name="Status" type="boolean" />
+				<xs:element name="UomQty" type="xs:int" />
+				<xs:element name="UnitQty" type="xs:int" />
+				<xs:element name="MaxWeightUpon" type="range044" />
+				<xs:element name="PutawayZone" type="xs:string" />
+				<xs:element name="PickArea" type="xs:string" />
+        <xs:element name="Item">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Code" type="xs:string" />            
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="reqString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="boolean">
+		<xs:restriction base="xs:unsignedByte">
+			<!--<xs:enumeration value="0" />
+			<xs:enumeration value="1" />-->
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="range084">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="99999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="range044">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="9999"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

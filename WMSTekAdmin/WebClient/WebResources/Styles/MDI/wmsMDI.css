@@ -1,0 +1,67 @@
+body {
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  /* background: #FFF8DD url(body-bg.png) no-repeat fixed center 10px; */
+  background-image:url(bg_body_lineas.jpg)
+}         
+
+#dock {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:24px;
+  background:transparent url(img_bg_barra_estado.jpg) repeat-x 0 0;
+  z-index: 100000;	
+}       
+
+.dock_icon {
+  float:left;
+  width:115px;
+  height:18px; 
+  margin-top:px;
+  background: url(button-bg.gif);
+  text-align:center;
+  font-size: 10px;
+  font-family: verdana, Monaco, Tahoma,  Arial, Helvetica, sans-serif;
+  color: #000;
+  margin-right:0px;
+  margin-left:3px;
+  cursor:pointer;
+  padding-top:6px;  
+}     
+
+.dock_icon_focus {
+  float:left;
+  width:115px;
+  height:18px; 
+  margin-top:0px;
+  background: url(button-bg-focus.gif);
+  text-align:center;
+  font-size: 10px;
+  font-family: verdana, Monaco, Tahoma,  Arial, Helvetica, sans-serif;
+  color: #000;
+  margin-left:3px;
+  margin-right:0px;
+  cursor:pointer;
+  padding-top:6px;  
+}    
+
+.dockButton
+{
+	background-position: center center;
+	float: right;
+	margin-top: 2px;
+	margin-left: 0px;
+	margin-right: 2px;
+	cursor: pointer;
+}  
+
+#theme {       
+  float:right; 
+  margin-top:3px;
+  margin-right:15px;
+  margin-top:3px;
+  margin-right:15px;
+}

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CABECERA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="DETALLE">
+          <xs:complexType>
+            <xs:attribute name="LPN_CodigoBarraExt" type="xs:string" use="required" />
+            <xs:attribute name="TipoReferencia" type="xs:string" use="required" />
+            <xs:attribute name="NumeroReferencia" type="xs:string" use="required" />
+            <xs:attribute name="TipoDocumento" type="xs:unsignedInt" use="required" />
+            <xs:attribute name="NumeroDocto" type="xs:string" use="required" />
+            <xs:attribute name="FechaDocto" type="xs:string" use="required" />
+            <xs:attribute name="CodigoArticulo" type="xs:string" use="required" />
+            <xs:attribute name="Cantidad" type="xs:unsignedInt" use="required" />
+            <xs:attribute name="DetCustomDecimalField_1" type="xs:unsignedLong" />
+			<xs:attribute name="DetCustomDecimalField_2" type="xs:unsignedLong" />
+			<xs:attribute name="DetCustomDecimalField_3" type="xs:unsignedLong" />
+            <xs:attribute name="DetCustomDateField_1" type="xs:string" />
+			<xs:attribute name="DetCustomDateField_2" type="xs:string" />
+			<xs:attribute name="DetCustomDateField_3" type="xs:string" />
+            <xs:attribute name="DetCustomTextField_1" type="xs:string" />
+			<xs:attribute name="DetCustomTextField_2" type="xs:string" />
+			<xs:attribute name="DetCustomTextField_3" type="xs:string" />
+            <xs:attribute name="UN_Largo" type="xs:unsignedInt" />
+            <xs:attribute name="UN_Ancho" type="xs:unsignedInt" />
+			<xs:attribute name="UN_Alto" type="xs:unsignedInt" />
+		    <xs:attribute name="UN_Volumen" type="xs:unsignedInt" />
+			<xs:attribute name="CJ_Largo" type="xs:unsignedInt" />
+			<xs:attribute name="CJ_Ancho" type="xs:unsignedInt" />
+			<xs:attribute name="CJ_Alto" type="xs:unsignedInt" />
+			<xs:attribute name="CJ_Volumen" type="xs:unsignedInt" />
+
+
+          </xs:complexType>
+        </xs:element>
+ 
+      </xs:sequence>
+	  
+    
+	  <xs:attribute name="PROCESO" type="xs:string" use="required" />
+      <xs:attribute name="EmpId" type="xs:unsignedInt" use="required" />
+	  <xs:attribute name="Usuario" type="xs:string" use="required" />  
+	  <xs:attribute name="Origen" type="xs:string" use="required" />  	  
+	  <xs:attribute name="RutProveedor" type="xs:string" use="required" /> 	  
+	  <xs:attribute name="ASN_CodigoBarraExt" type="xs:string" use="required" /> 
+	  <xs:attribute name="TipoReferencia" type="xs:string" use="required" /> 
+	  <xs:attribute name="NumeroReferencia" type="xs:string" use="required" /> 
+	  <xs:attribute name="Patente" type="xs:string" use="required" /> 
+	  <xs:attribute name="RutChofer" type="xs:string" use="required" /> 
+	  <xs:attribute name="NombreChofer" type="xs:string" use="required" /> 
+	  <xs:attribute name="CustomDecimalField_1" type="xs:string" /> 
+	  <xs:attribute name="CustomDecimalField_2" type="xs:string" /> 
+	  <xs:attribute name="CustomDecimalField_3" type="xs:string" />   
+	  <xs:attribute name="CustomDateField_1" type="xs:string" /> 
+	  <xs:attribute name="CustomDateField_2" type="xs:string" /> 		   
+	  <xs:attribute name="CustomDateField_3" type="xs:string" /> 		   
+	  <xs:attribute name="CustomTextField_1" type="xs:string" /> 
+	  <xs:attribute name="CustomTextField_2" type="xs:string" /> 
+	  <xs:attribute name="CustomTextField_3" type="xs:string" /> 	  
+
+
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

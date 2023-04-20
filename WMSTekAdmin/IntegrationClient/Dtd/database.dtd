@@ -1,0 +1,40 @@
+﻿<!ELEMENT pools (pool_config)+>
+<!ELEMENT pool_config (name, data_source_name,driver_class,time_out,user,password,querys,instances)>
+<!ATTLIST pool_config code CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT data_source_name (#PCDATA)>
+<!ELEMENT driver_class (#PCDATA)>
+<!ELEMENT time_out (#PCDATA)>
+<!ELEMENT user (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT querys (query+)>
+<!ELEMENT query (sql, parameters?,filters?)>
+<!ATTLIST query code CDATA #REQUIRED>
+<!ELEMENT sql (#PCDATA)>
+<!ELEMENT parameters (parameter+)>
+<!ELEMENT parameter (#PCDATA)>
+<!ATTLIST parameter type (Decimal | DateTime | Int | String | Boolean | Float | Short | Byte | Long | Binary | SQLPart | Char | XML) #IMPLIED>
+<!ELEMENT instances (instance+)>
+<!ELEMENT instance (table_name,column_name,class_name)>
+<!ELEMENT table_name (#PCDATA)>
+<!ELEMENT column_name (#PCDATA)>
+<!ELEMENT class_name (#PCDATA)>
+<!ELEMENT filters (filter+)>
+<!ELEMENT filter (#PCDATA)>
+<!ATTLIST filter type (numericIn | numericEqual |numericGreater | textLike | textEqual | textBetween | textIn | textLeft | isNull | numericBetween) #IMPLIED>
+<!ATTLIST filter includeNulls (true | false) #IMPLIED>
+<!ATTLIST filter name (Country | 
+                        State | City | ShipmentDateRange | ExpectedDateRange | 
+                        Route | Customer | PriorityRange | FifoDateRange | ReceipType | 
+                        Carrier | Vendor | DocumentType  | InboundType | GroupItem1 | 
+                        GroupItem2 | GroupItem3 | GroupItem4 | Description | Status | 
+                        Code | Name | Warehouse | LpnType | TruckType | DocumentNbr | 
+                        DateRange | Item | Owner | Location | LocationRange | LocationRow | 
+                        LocationColumn | LocationLevel | LocationAisle | Hangar | WorkZone | 
+                        LocationType | ReceiptDateRange | ExpirationDateRange | EmissionDate | 
+                        FabricationDateRange | LotNumberRange | Scope | Module | Driver |
+                        Code_CtrItm | Name_CtrItm | Descripcion_CtrItm  | Translate | ObjectType | 
+						PropertyName | ObjectContainer | Counted | Empty | DifQty | DifAmount | MovementType |
+            LocationSource | LocationTarget | LpnSource | LpnTarget | WmsProcessType| LocationRowRange|
+            LocationColumnRange| LocationLevelRange | TaskType | IsComplete | PriorityTask | TrackOutboundType |
+            OutboundType | ReferenceDocType | CodeNumeric) #IMPLIED>

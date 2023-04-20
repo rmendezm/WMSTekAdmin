@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="OutboundOrders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="OutboundOrder">
+		      <xs:complexType>
+			      <xs:sequence>
+              <xs:element name="Number" type="xs:string" />
+              <xs:element name="Status" type="xs:boolean" />
+              <xs:element name="ReferenceNumber" type="xs:string" />
+              <xs:element name="LoadCode" type="xs:string" />
+              <xs:element name="LoadSeq" type="xs:string" />
+              <xs:element name="Priority" type="xs:int" />
+              <xs:element name="InmediateProcess" type="xs:unsignedByte" />
+              <xs:element name="EmissionDate" type="xs:dateTime" />
+              <xs:element name="ExpectedDate" type="xs:dateTime" />
+              <xs:element name="ShipmentDate" type="xs:dateTime" />
+              <xs:element name="ExpirationDate" type="xs:dateTime" />
+              <xs:element name="CancelDate" type="xs:dateTime" />
+              <xs:element name="CancelUser" type="xs:string" />
+              <xs:element name="CustomerCode" type="xs:string" />
+              <xs:element name="CustomerName" type="xs:string" />
+              <xs:element name="DeliveryAddress1" type="xs:string" />
+              <xs:element name="DeliveryAddress2" type="xs:string" />
+              <xs:element name="DeliveryPhone" type="xs:string" />
+              <xs:element name="DeliveryEmail" type="xs:string" />
+              <xs:element name="FullShipment" type="xs:unsignedByte" />
+              <xs:element name="RouteCode" type="xs:string" />
+              <xs:element name="Plate" type="xs:string" />
+              <xs:element name="Invoice" type="xs:string" />
+              <xs:element name="FactAddress1" type="xs:string" />
+              <xs:element name="FactAddress2" type="xs:string" />
+              <xs:element name="FactPhone" type="xs:string" />
+              <xs:element name="FactEmail" type="xs:string" />
+				      <xs:element name="Warehouse">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Code" type="xs:string" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <xs:element name="Owner">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Code" type="xs:string" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>				
+				      <xs:element name="OutboundType">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Code" type="xs:string" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>				
+				      <!--<xs:element name="CountryDelivery">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <xs:element name="StateDelivery">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <xs:element name="CityDelivery">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>-->
+				      <xs:element name="WarehouseTarget">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>				
+				      <xs:element name="Carrier">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Code" type="xs:string" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <!--<xs:element name="CountryFact">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <xs:element name="StateFact">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+				      <xs:element name="CityFact">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element name="Id" type="xs:int" />
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>-->
+				      <xs:element name="OutboundDetails">
+					      <xs:complexType>
+						      <xs:sequence>
+							      <xs:element maxOccurs="unbounded" name="OutboundDetail">
+								      <xs:complexType>
+									      <xs:sequence>
+										      <xs:element name="LineNumber" type="xs:int" />
+										      <xs:element name="LineCode" type="xs:string" />
+										      <xs:element name="ItemQty" type="xs:decimal" />
+										      <xs:element name="Status" type="xs:unsignedByte" />
+										      <xs:element name="LotNumber" type="xs:string" />
+										      <xs:element name="FifoDate" type="xs:dateTime" />
+										      <xs:element name="ExpirationDate" type="xs:dateTime" />
+										      <xs:element name="FabricationDate" type="xs:dateTime" />
+                          <xs:element name="Item">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Code" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="CategoryItem">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Code" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+									      </xs:sequence>
+								      </xs:complexType>
+							      </xs:element>
+						      </xs:sequence>
+					      </xs:complexType>
+				      </xs:element>
+			      </xs:sequence>
+		      </xs:complexType>
+	      </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+        
+	<xs:simpleType name="boolean">
+		<xs:restriction base="xs:boolean">
+			<!--<xs:enumeration value="0" />
+			<xs:enumeration value="1" />-->
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

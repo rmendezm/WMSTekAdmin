@@ -1,0 +1,254 @@
+﻿
+.btnRefreshChart {
+    margin-bottom: 12px;
+}
+
+.container {
+    overflow-y: auto;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+label {
+    font-size: 12px;
+    color: black;
+}
+
+.datepicker, .datepickerMonth {
+    padding: 0px !important;
+    margin-bottom: 5px;
+    z-index: 9999999;
+    border-radius: 4px;
+    direction: ltr;
+}
+
+.barChartCustom {
+    margin-top: 50px;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    -ms-flex-flow: row wrap;
+}
+
+.flex-item {
+    background: white;
+    width: 555px;
+    height: 480px;
+    margin-top: 10px;
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+    cursor: move;
+}
+
+.flex-container-item {
+    margin: 8px 8px 8px 8px;
+}
+
+#divSimpleListOrderStatus {
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+h2, input {
+    color: black !important;
+}
+
+.updateIcon{
+    cursor: pointer;
+}
+
+.fullScreen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    height: 96%;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+    overflow-x: auto;
+    cursor: default;
+}
+
+.filterVisibility {
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.minimizeFilter, .maximizeFilter, .divFilter {
+    cursor: default;
+}
+
+.rowLastUpdate {
+    background-color: white;
+    margin: 5px;
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* kpi table */
+.kpiSummary {
+    width: 98%;
+}
+
+.fullScreen .kpiSummary {
+    display: block;
+}
+
+canvas {
+    cursor: default;
+    margin: 0 auto;
+}
+
+.fullScreen canvas{
+    width: 85% !important;
+    height: 85% !important;
+}
+
+.kpiSummary table {
+    color: black;
+}
+
+.center {
+    text-align: center;
+}
+
+.kpiSummary table {
+    width: 80% !important;
+    margin: 0 auto;
+}
+/* fin kpi table */
+
+.taskBarPanel {
+    z-index: 999 !important;
+}
+
+.mainFilterPanel {
+    z-index: 999 !important;
+}
+
+/*@media (min-width: 576px) {
+    .fullScreen canvas {
+        width: 585px !important;
+        height: 293px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .fullScreen canvas {
+        width: 716px !important;
+        height: 358px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .fullScreen canvas {
+        width: 911px !important;
+        height: 455px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fullScreen canvas {
+        width: 1171px !important;
+        height: 585px !important;
+    }
+}*/
+
+/* totales */
+.row-total {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.panel {
+    border-color: lightgrey;
+    margin-top: 10px;
+}
+
+.panel-heading h4 {
+    text-decoration: underline;
+}
+
+.panel-solid-info {
+    color: #577B96;
+}
+
+.values-total {
+    background: #577B96;
+    text-align: center;
+    border: 1px solid;
+    margin-bottom: 10px;
+}
+
+    .values-total span:first-child {
+        font-size: 40px;
+    }
+
+    .values-total span {
+        color: white;
+        position: relative;
+        top: 25%;
+        display: block;
+    }
+
+.panel-body > .row {
+    text-align: center;
+}
+
+/* fin totales */
+
+.modal {
+    z-index: 100001;
+}
+
+/* order status */
+.simpleListOrderStatus {
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    -ms-flex-flow: row wrap;
+    padding-top: 10px;
+    cursor: default;
+}
+
+.completeListOrderStatus {
+    color: black;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    -ms-flex-flow: row wrap;
+    cursor: default;
+}
+
+.summaryOrderStatus {
+    display: inline;
+    width: 49%;
+    margin-right: 1%;
+    margin-bottom: 8px;  
+}
+
+.completeSummaryOrderStatus {
+    display: inline;
+    width: 24%;
+    margin-right: 1%;
+    margin-bottom: 8px;
+}
+
+    .completeSummaryOrderStatus .panel-body {
+        font-size: 24px;
+        font-weight: bold;
+    }
+/* fin order status */

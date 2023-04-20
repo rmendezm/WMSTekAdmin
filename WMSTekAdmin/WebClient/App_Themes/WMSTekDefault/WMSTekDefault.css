@@ -1,0 +1,211 @@
+﻿/* GRID VIEW */
+.tableView
+{
+	margin: 0px;
+	padding: 0px;
+	color: #333333;
+	border-collapse: collapse;
+	white-space: nowrap;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 8pt;
+	z-index: -1;
+}
+
+.tableView td
+{
+	white-space:nowrap;
+	border-style: none solid;
+		z-index: -1;
+}
+
+.tableViewHeader
+{
+	font-weight: bold;
+	white-space: nowrap;
+	margin: 2px;
+	padding: 2px;
+}
+
+.tableViewHeaderDetail
+{
+	font-weight: bold;
+	white-space: nowrap;
+	margin: 2px;
+	padding: 2px;	
+}
+
+.tableViewFooter
+{
+	background-color: #ECE9D8;
+	color: #E5E5E5;
+	font-weight: normal;
+	border-style: none solid none solid;
+	border-color: #CC3399;
+}
+
+.tableViewRow
+{
+	margin: 0px;
+	padding: 0px;
+	padding-left:2px;	
+	padding-right:2px;	
+	background-color: #EAF3FF;
+	color: #333333;
+	border-style: none solid none solid;
+	border-color: #CFDDF7;
+	/*border-color: #D9E6FD;*/
+	white-space: nowrap;
+}
+
+.tableViewEditRow
+{
+	margin: 0px;
+	padding: 0px;	
+	background-color:#999999;
+	border-style: none solid none solid;
+	border-color: #B6CEFB;
+	white-space: nowrap;	
+}
+
+.tableViewSelectedRow
+{
+	margin: 0px;
+	padding: 0px;	
+	background-color: #FBC568;
+	border-style: none solid none solid;
+	border-color: #B6CEFB;
+	white-space: nowrap;
+}
+
+.tableViewPager
+{
+	border-top-color: #C0C0C0;
+	border-top-style: solid;
+	border-top-width: 1px;
+	padding-top: 2px;
+	color: Gray;
+	white-space: normal;
+	position: absolute;
+	bottom: 0px;
+	right: 160px;
+	width: auto; 
+	height: 22px;
+	z-index: 10;
+	text-align: right;	
+	visibility: hidden;
+}
+
+.tableViewAlternatingRow
+{
+	margin: 0px;
+	padding: 0px;	
+	padding-left:2px;	
+	padding-right:2px;	
+	background-color:white;
+	color:#284775;
+	border-style: none solid none solid;
+	border-color: #CFDDF7;
+	/*border-color: #D9E6FD;*/
+	white-space: nowrap;		
+}
+
+.tableViewEmptyGrid
+{
+	background-color: #EAF3FF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 12px;
+	padding: 4px;
+}
+
+.tableViewEmptyGridDetail
+{
+	background-color: #FBE8A6;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 3px;
+}
+
+/* TEXTBOX */
+.txtDefault
+{
+	color: #008000;/*verde*/ 
+}
+
+.txtFilter
+{
+	color: #0066CC; /*azul*/ 
+	font-size: 8pt;
+	font-family: Verdana, Helvetica, Sans-Serif;	
+	/*color: #6592D6; /*celeste*/ 
+	/*color: #FF9933; /*naranjo*/
+}
+
+.txtModal
+{
+  color: #000099;
+}
+
+/* DROP-DOWN LIST */
+.ddlDefault
+{
+	color: #008000;
+}
+
+
+.ddlFilter
+{
+	color: #0066CC;  
+	font-size: 8pt;
+	font-family: Verdana, Helvetica, Sans-Serif;
+}
+
+
+.ddlModal
+{
+}
+
+/* BUTTON */
+.btnDefault
+{
+}
+
+.btnSmall
+{
+	background-color: transparent;
+	background-image: url(../../WebResources/Images/Buttons/Filter/btn_bg.gif); 
+	background-repeat: repeat-x; 
+	border: 1px solid #6996D7;
+	padding-left: 0px;
+	padding-top: 1px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	float: left;
+	overflow: hidden;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-top: 1px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;
+	height: 18px;
+	color: #696969;
+}
+
+.btnSmallOn
+{
+/*	background-color: transparent;
+	background-image: url(../../WebResources/Images/Buttons/btn_bg_on.gif); 
+	background-repeat: repeat-x; */
+	border: 1px solid #FFBD69;	  
+	padding: 0px;
+	float: left;
+	height: 18px;
+	vertical-align: text-top;
+	margin-right: 5px;
+	font-family: Verdana, Helvetica, Sans-Serif;
+	font-weight: normal;
+	font-size: 8pt;	
+}

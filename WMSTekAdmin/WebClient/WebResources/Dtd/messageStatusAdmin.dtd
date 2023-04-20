@@ -1,0 +1,6 @@
+﻿<!ELEMENT messages (message)+>
+<!ELEMENT message (code, description+)>
+<!ELEMENT code (#PCDATA)>
+<!ELEMENT description (detail)+>
+<!ELEMENT detail (#PCDATA)>
+<!ATTLIST description language (ES | es | US | us ) #REQUIRED>

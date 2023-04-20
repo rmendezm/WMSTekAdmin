@@ -1,0 +1,959 @@
+﻿<!DOCTYPE html>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WMSTekContent.Master.cs" Inherits="Binaria.WMSTek.WebClient.Shared.WMSTekContent" %>
+<%@ Register Assembly="Flan.Controls" Namespace="Flan.Controls" TagPrefix="cc1" %>
+<%@ Register TagPrefix="webUc" TagName="ucError" Src="~/Shared/ErrorContent.ascx" %>
+<%@ Register TagPrefix="webUc" TagName="ucMainFilter" Src="~/Shared/MainFilterContent.ascx" %>
+<%@ Register TagPrefix="webUc" TagName="ucTaskBar" Src="~/Shared/TaskBarContent.ascx" %>
+<%@ Register TagPrefix="webUc" TagName="ucDialog" Src="~/Shared/DialogBoxContent.ascx" %>
+
+<html>
+<head runat="server">
+    <meta content="text/JScript" http-equiv="content-script-type" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>WMSTek</title>
+    
+    <link href="../WebResources/Images/Login/favicon-wk.png" rel="shortcut icon"/>
+
+        
+    <!-- Css Required Files -->    
+    <link href="../WebResources/Styles/ModalPopup.css" rel="stylesheet" type="text/css" />
+    <link href="../WebResources/Styles/WMSTekWeb.css" rel="stylesheet" type="text/css" />
+    <link href="../WebResources/Styles/font-awesome.css" rel="stylesheet" type="text/css" />
+    <!-- FIN Css Required Files -->  
+
+</head>
+<body class="contentBody" onunload = "ClosePage();" id="bodytag" onload="SetDivs();" onresize="SetDivs();" >
+
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jquery-3.0.0.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jquery-migrate-3.0.0.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jquery-ui.min.1.12.0.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/bootstrap.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/mui.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/verticalMenu.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/tableHeadFixer.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jquery.dragtable.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/q.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jsrender.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/underscore.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/urlWS.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/grid.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/moment.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/bootstrap-datepicker.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/bootstrap-datepicker.es.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/numeral.min.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/numeral.es-es.js")%>"></script>
+    <script src="<%= Page.ResolveClientUrl("~/WebResources/Script/jquery.toast.min.js")%>"></script>
+
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/jquery-ui.1.12.0.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/bootstrap.3.3.7.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/dragtable.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/grid.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/verticalMenu.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/bootstrap-datepicker.min.css")%>" rel="stylesheet" type="text/css" />
+    <link href="<%= Page.ResolveClientUrl("~/WebResources/Styles/jquery.toast.min.css")%>" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+        $(document).ajaxStart(function () {
+            loadingTimeout = setTimeout(function () {
+                loadingAjaxStart();
+            }, 200);
+        }).ajaxError(function () {
+            clearTimeout(loadingTimeout);
+            setTimeout(function () {
+                loadingAjaxStop();
+            }, 200);
+        }).ajaxStop(function () {
+            clearTimeout(loadingTimeout);
+            setTimeout(function () {
+                loadingAjaxStop();
+            }, 200);
+        });
+
+        function loadingAjaxStart() {
+            $("#ctl00_uprStatusBarContent").removeAttr("style").css({
+                "position": "absolute",
+                "z-index": "100000000",
+                "top": "48px",
+                "width": "100%",
+                "height": "100%",
+                "background-color": "white",
+                "opacity": "0.7"
+            });
+
+            $(".divProgress").show().css({
+                "background-color": "white",
+                "margin": "auto",
+                "width": "50px",
+                "padding": "50px"
+            });
+        }
+
+        function loadingAjaxStop() {
+            $("#ctl00_uprStatusBarContent").removeAttr("style");
+            $(".divProgress").removeAttr("style").hide();
+        }       
+
+        $(function () {
+            Sys.Application.add_init(appl_init_master);
+
+            clickAdvancedFilter();
+            SetDivs();
+            setDisplayToVerticalSplitter();
+
+            $("#form1").on("submit", function (evt) {
+                evt.preventDefault();
+            });
+
+            hideMenu();
+
+            createBreadcrumbs();
+
+            numeral.locale('es-es');
+        });
+
+        function createBreadcrumbs() {
+
+            if (getCurrentPage(true) != "desktop") {
+
+                var param = {
+                    url: getCurrentPage(false)
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: urlWS() + urlWSGrid() + "GetMenuByUrl",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(param),
+                    success: function (data, status, jqXHR) {
+                        createBreadcrumbsHtml(data.d.Entities);
+                    },
+                    error: function (jqXHR, status, err) {
+                        console.error("Error en GetMenuByUrl");
+                    }
+                });
+            }
+        }
+
+        function createBreadcrumbsHtml(data) {
+
+            var dataUlr = data[0];
+
+            if (dataUlr) {
+                var lastPath = "";
+                var div = $("#pagePath");
+                div.empty();
+
+                var ol =
+                    $('<ol/>', {
+                        'class': 'breadcrumb breadcrumbCustom'
+                    }).appendTo(div);
+
+                $.each(dataUlr.WinPath.split(">"), function (i, elem) {
+
+                    var li =
+                        $('<li/>', {
+                        }).appendTo(ol).html(elem.trim());
+                });
+
+                var li =
+                    $('<li/>', {
+                        'class': 'active'
+                    }).appendTo(ol).html(dataUlr.TextValue);
+
+                document.getElementsByTagName("title")[0].innerHTML = dataUlr.ShortTitle || dataUlr.TextValue;
+            }  
+        }
+
+        function appl_init_master() {
+            var pgRegMgr = Sys.WebForms.PageRequestManager.getInstance();
+            pgRegMgr.add_beginRequest(beforeAsyncPostBack_master);
+            pgRegMgr.add_endRequest(afterAsyncPostBack_master);
+        }
+
+        function beforeAsyncPostBack_master() {
+
+        }
+
+        function afterAsyncPostBack_master() {
+            clickAdvancedFilter();
+            SetDivs();
+            setDisplayToVerticalSplitter();
+            setTabActiveAgain();
+            createBreadcrumbs();
+        }
+
+        function hideMenu() {
+            var url = window.location.href.split("/");
+            var page = url[url.length - 1].toLowerCase().split(".")[0];
+
+            if (getCurrentPage(true) != "desktop") {
+                setTimeout(function () {
+                    $("#hamburgerMenu").trigger("click");
+                }, 800);
+            }
+        }
+
+        function setWidthContainer() {
+
+        }
+
+        function clickAdvancedFilter() {
+
+            var btnAdvFilter = $("#ctl00_ucMainFilterContent_lblToggleAdvancedFilter");
+            if (btnAdvFilter.length > 0) {
+
+                $(btnAdvFilter).click(function (e) {
+
+                    if (parseInt($($(".advancedFilterPanel")[0]).css("height").replace("px", "")) < 2) {
+                        $("div.container:first").css("margin-top", "135px");
+                    } else {
+                        $("div.container:first").css("margin-top", "0px");
+                    }
+                });
+            }
+        }
+
+        function setTabActiveAgain()
+        {
+            if ($(".advancedFilterPanel").length > 0) {
+
+                if (parseInt($($(".advancedFilterPanel")[0]).css("height").replace("px", "")) > 1) {
+                    var activeTab = $(".advancedFilterPanel .ajax__tab_header .ajax__tab_active");
+
+                    if (activeTab) {
+
+                        var indexActivetab = $(activeTab).index();
+
+                        $(".advancedFilterPanel .ajax__tab_header > span:first").children().children().children().trigger("click");
+                        $(".advancedFilterPanel .ajax__tab_header > span").eq(indexActivetab).children().children().children().trigger("click");
+                    }
+                }
+            }
+        }
+
+        function setDisplayToVerticalSplitter() {
+            if ($(".ob_spl_dividervertical").length > 0) {
+                $(".ob_spl_dividervertical").css({ "display": "block", "width": "8px" });
+            }  
+        }
+
+
+        //  Esta funcion valida la tecla Borrar para que no se de marcha atras de las paginas      
+        document.onkeydown = function (e) { stopDefaultBackspaceBehaviour(e); }
+        document.onkeypress = function (e) { stopDefaultBackspaceBehaviour(e); }
+
+        function stopDefaultBackspaceBehaviour(event) {
+            var event = event || window.event;
+            if (event.keyCode == 8) {
+                var elements = "HTML, BODY, TABLE, TBODY, TR, TD, DIV, SELECT";
+                var d = event.srcElement || event.target;
+
+                if (d.tagName == 'INPUT') {
+                    if (d.readOnly)
+                        event.returnValue = false;
+                } else {
+                    var regex = new RegExp(d.tagName.toUpperCase());
+                    if (regex.test(elements)) {
+                        event.preventDefault ? event.preventDefault() : event.returnValue = false;
+                    }
+                }
+            }
+        }
+
+
+
+        //        TODO: pasar Utils.js
+        function ClosePage() {
+
+        }
+
+        function btnLogOut_onclick() {
+            if (window.parent.location != window.location)
+                window.parent.execScript("LogOut()");
+            else
+                LogOut();
+        }
+
+        function LogOut() {
+
+            var isLogout = confirm("¿Desea cerrar sesión?");
+
+            if (isLogout == true) {
+                window.location = urlWS() + '/DetectScreen.aspx';
+            }
+        }
+
+        function Home()
+        {
+            window.location = urlWS() + '/Account/Desktop.aspx';
+        }
+
+        function SetDivs() {
+
+            if (typeof setDivsBefore !== 'undefined') {
+                setDivsBefore();
+            }
+
+            if ($(".ob_spl_dividerhorizontal").length > 0) {
+
+                var topHeight = $(".ob_spl_toppanelcontent").height();
+                var checkboxTopHeight = $(".ob_spl_toppanelcontent div.row-height-filter").height() || 0;
+                var displayCheckboxTop = $(".ob_spl_toppanelcontent div.row-height-filter").css("display");
+                var totalTop = 0;
+
+                if (displayCheckboxTop == "none") {
+                    totalTop = topHeight - 20;
+                } else {
+                    if (checkboxTopHeight > 0) {
+                        totalTop = topHeight - checkboxTopHeight - 40;
+                    } else {
+                        totalTop = topHeight - 40;
+                    }
+                }
+
+                $.each($(".ob_spl_toppanelcontent div.froze-header-grid"), function (i, elem) {
+                    $(elem).css("height", totalTop + "px");
+                });
+
+                var bottomHeight = $(".ob_spl_bottompanelcontent").height();
+                var checkboxBottomHeight = $(".ob_spl_bottompanelcontent div.row-height-filter").height() || 0;
+                var displayCheckboxBottom = $(".ob_spl_bottompanelcontent div.row-height-filter").css("display");
+                var totalBottom = 0;
+
+                if (displayCheckboxBottom == "none") {
+                    totalBottom = bottomHeight - 20;
+                } else {
+                    if (checkboxBottomHeight > 0) {
+                        totalBottom = bottomHeight - checkboxBottomHeight - 15;
+                    } else {
+                        totalBottom = bottomHeight - 40;
+                    }
+                }
+
+                var titleHeight = $(".divGridDetailTitle").height() || 0;
+                if (titleHeight > 0) {
+                    totalBottom = totalBottom - titleHeight - 15;
+                }
+
+                $.each($(".ob_spl_bottompanelcontent div.froze-header-grid"), function (i, elem) {
+                    $(elem).css("height", totalBottom + "px");
+                });
+
+            } else {
+
+                if (document.getElementById("ctl00_MainContent_divGrid") != null) {
+                    setDivsById("ctl00_MainContent_divGrid");
+                } else if (document.getElementById("ctl00_MainContent_divCanvas") != null) {
+                    setDivsByIdMap("ctl00_MainContent_divCanvas");
+                }
+            }
+
+            if (typeof setDivsAfter !== 'undefined') {
+                setDivsAfter();
+            }
+        }
+
+        function setDivsById(idDiv) {
+
+            var heightI = ((document.getElementById("bodytag").offsetHeight - 66) < 0 ? 0 : (document.getElementById("bodytag").offsetHeight - 66));
+            var heightFilterHideColumns = $("div.row-height-filter").height() || 0;
+            var displayFilterHideColumns = $("div.row-height-filter").css("display");
+
+            heightI = heightI - heightFilterHideColumns;
+
+            if (displayFilterHideColumns == "none") {
+                heightI = heightI - 40;
+            } else {
+                if (heightFilterHideColumns > 0) {
+                    heightI = heightI - heightFilterHideColumns - 40;
+                } else {
+                    heightI = heightI - 40;
+                }
+            }
+
+            document.getElementById(idDiv).style.height = heightI + "px";
+            document.getElementById(idDiv).style.maxHeight = heightI + "px";
+
+        }
+
+        function setDivsByIdMap(idDiv) {
+            var heightMainDiv = $("#bodytag").height() || 0;
+            var widthMainDiv = $("#ctl00_divTop").width() || 0;
+
+            heightMainDiv -= 70;
+            widthMainDiv -= 15;
+
+            $("#" + idDiv).css({ "height": heightMainDiv + "px", "width": widthMainDiv + "px" });
+        }
+
+        function SetDivsLocation() {
+            if (document.getElementById("ctl00_MainContent_divGrid") != null) {
+                document.getElementById("ctl00_MainContent_divGrid").style.height = document.getElementById("bodytag").offsetHeight - 66 + "px";
+                document.getElementById("ctl00_MainContent_divGrid").style.maxHeight = document.getElementById("bodytag").offsetHeight - 250 + "px";
+            }
+        }
+
+        function OnlyNumber(e, typeNumber) {
+            var caracter = e.keyCode;
+            var allCaracter = e.srcElement.value + String.fromCharCode(e.keyCode);
+            var expresion = /[,]/g;
+
+            if (typeNumber.toString().toUpperCase() == "DECIMAL") {
+                if (caracter > 47 && caracter < 58 || caracter == 44) {
+
+                    var matches = allCaracter.match(expresion)
+                    if (matches) {
+                        if (matches.length > 1) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            } else {
+                if (caracter > 47 && caracter < 58) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        // 31-03-2015
+        //Funcion Creada para Que los Popup Funcionen en Chrome
+        function pageLoad() {
+            if (typeof (Sys.Browser.WebKit) == "undefined") {
+                Sys.Browser.WebKit = {};
+            }
+            if (navigator.userAgent.indexOf("WebKit/") > -1) {
+                Sys.Browser.agent = Sys.Browser.WebKit;
+                Sys.Browser.version = parseFloat(navigator.userAgent.match(/WebKit\/(\d+(\.\d+)?)/)[1]);
+                Sys.Browser.name = "WebKit";
+            }
+        }
+        //
+
+        var links = null;
+
+        function closeSideBarMenuAuto() {
+            $("#sidedrawer a").click(function () {
+                setTimeout(function () {
+                    $("#hamburgerMenu").trigger("click");
+
+                    if (getCurrentPage(true) == "desktop") {
+                        setMaxWidthCustom();
+                    }
+
+                }, 800);
+            });
+        }
+
+        function getCurrentPage(urlComplete) {
+            var url = window.location.href.split("/");
+
+            if (urlComplete == true) {
+                return page = url[url.length - 1].toLowerCase().split(".")[0];
+            } else {
+                return page = url[url.length - 1];
+            }
+        }
+
+        function GetMenuByUser(idUser) {
+
+            if (links == null) {
+
+                var param = {
+                    idUser: idUser
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: urlWS() + urlWSGrid() + "GetMenuByUser",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: JSON.stringify(param),
+                    success: function (data, status, jqXHR) {
+                        setIdUser(idUser);
+                        data.d.Entities.forEach(function (elem) {
+                            if (elem.AspxPage) {
+                                elem.AspxPage = urlWS() + elem.AspxPage.replace("..", "");
+                            }                          
+                        });
+                        links = data.d.Entities;
+                        createMenu(data.d.Entities, true);
+                        searchMenu();
+                    },
+                    error: function (jqXHR, status, err) {
+                        console.error("Error en GetMenuByUser");
+                    }
+                });
+
+            } else {
+                createMenu(links, true);
+                searchMenu();
+            }
+        }
+
+        function createMenu(data, returnMenuComplete) {
+            var mainMenus = _.where(data, { WinPath: null });
+            var menuLinks = [];
+
+            mainMenus.forEach(function (menu) {
+                menu.subMenus = _.where(data, { IDParentMenuItem: menu.Id });
+
+                menu.subMenus.forEach(function (subMenu, index) {
+                    menu.subMenus[index].subMenus = _.where(data, { IDParentMenuItem: subMenu.Id });
+
+                    if (returnMenuComplete == false) {
+                        if (menu.subMenus[index].subMenus.length == 0) {
+                            menuLinks.push(menu.subMenus[index]);
+                        }
+
+                        menu.subMenus[index].subMenus.forEach(function (menuToSearch, i) {
+                            menuLinks.push(menuToSearch);
+                        });
+                    }
+
+                });
+            });
+
+            if (returnMenuComplete == true) {
+                showMenu(mainMenus);
+            } else {
+                return menuLinks;
+            }
+        }
+
+        function showMenu(mainMenus) {
+            var tmpl = $.templates("#menu");
+            var html = tmpl.render(mainMenus);
+
+            $("#sidedrawer > ul").empty().append(html);
+            verticalMenuFunc();
+            closeSideBarMenuAuto();
+        }
+
+        function searchMenu() {
+            $("#txtSearchMenu").unbind();
+            $("#txtSearchMenu").keyup(_.debounce(function () {
+
+                if ($(this).val() != '') {
+                    var textToSearch = RemoveAccents($(this).val().toLowerCase());
+                    var linksMenu = createMenu(links, false);
+                    var linksFiltered = [];
+
+                    $.each(linksMenu, function (index, nameLink) {
+                        var hrefToSearch = nameLink.TextValue;
+                        var hrefToSearchFormated = RemoveAccents(hrefToSearch.toLowerCase());
+
+                        if (hrefToSearchFormated.indexOf(textToSearch) !== -1) {
+                            linksFiltered.push(nameLink);
+                        }
+                    });
+
+                    if (linksFiltered.length > 0) {
+                        var tmpl = $.templates("#subMenuFiltered");
+                        var html = tmpl.render(linksFiltered);
+                        $("#sidedrawer > ul").empty().append(html);
+                        closeSideBarMenuAuto();
+                    } else {
+                        var tmpl = $.templates("#SearchWithNoResults");
+                        var arrayMessage = [];
+                        arrayMessage.push({ Text: "No se encontraron resultados para su búsqueda" });
+                        var html = tmpl.render(arrayMessage);
+                        $("#sidedrawer > ul").empty().append(html);
+                    }
+
+                } else {
+                    // solo vuelve a crear el menu si se ha hecho una busqueda justo antes. Si antes estaba el menu original completo, simplemente se mantiene.
+                    if ($("#sidedrawer li.linksFiltered").length > 0 || $("#divSearchWithNoResults").length > 0) {
+                        $("#sidedrawer > ul").empty();
+                        GetMenuByUser(getIdUser());
+                    }
+                }
+            }, 500));
+        }
+
+        function setIdUser(idUser) {
+            localStorage.removeItem("idUser");
+            localStorage.setItem("idUser", idUser);
+        }
+
+        function getIdUser() {
+            var idUser = localStorage.getItem("idUser");
+
+            if (idUser == null) {
+                window.location = '../DetectScreen.aspx';
+            } else {
+                return idUser;
+            }
+        }
+
+        function RemoveAccents(str) {
+            var accents = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
+            var accentsOut = "AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZz";
+            str = str.split('');
+            var strLen = str.length;
+            var i, x;
+            for (i = 0; i < strLen; i++) {
+                if ((x = accents.indexOf(str[i])) != -1) {
+                    str[i] = accentsOut[x];
+                }
+            }
+            return str.join('');
+        }
+
+        function errorMessage(message) {
+            $.toast({
+                heading: 'Error',
+                text: message,
+                showHideTransition: 'fade',
+                icon: 'error',
+                position: 'bottom-right'
+            });
+        }
+
+        function warningMessage(message, timeout) {
+            $.toast({
+                heading: 'Advertencia',
+                text: message,
+                showHideTransition: 'fade',
+                icon: 'warning',
+                position: 'bottom-right',
+                hideAfter: timeout
+            });
+        }
+
+        function successMessage(message) {
+            $.toast({
+                heading: 'Exitoso',
+                text: message,
+                showHideTransition: 'fade',
+                icon: 'success',
+                position: 'bottom-right'
+            });
+        }
+
+    </script>
+
+    <style>
+        #logo {
+             display: inline-block !important;
+             cursor: pointer;
+         }
+
+        #logo > h2 {
+            margin-top: 10px !important;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+         .linkSecondLevel{
+            padding-left: 11px;
+            display: block;
+         }
+
+         .linkVerticalMenu{
+             padding-bottom: 8px !important;
+         }
+
+         #containerHamburgerMenu{
+             display: inline;
+             position: relative;
+             top: -4px;
+         }
+
+         #txtSearchMenu{
+            width: 90%;
+            height: 30px;
+            margin-top: 6px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+         }
+
+         #divSearchWithNoResults{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+         }
+
+         #ctl00_ddlWarehouse, #ctl00_ddlOwner{
+            max-width: 200px;
+            width: 95%;
+            margin-bottom: 6px;
+            height: 22px;
+            padding: 0px 0px;
+         }
+
+         .container{
+             /*margin-top: 45px;*/
+         }
+
+    </style>
+
+    <form id="form1" runat="server" >
+
+        <asp:ScriptManager ID="smMasterContent" runat="server" 
+                EnablePartialRendering="true" 
+                EnableScriptGlobalization="True"
+                EnablePageMethods="true"
+                AsyncPostBackTimeOut="600">
+                
+            <Scripts>
+                <asp:ScriptReference Path="~/WebResources/Javascript/Map2D.js" />
+            </Scripts>                 
+        </asp:ScriptManager>
+
+        <!-- templates menu vertical -->
+        <script id="menu" type="text/x-jsrender">
+			<li> 
+                <strong>
+                    {{if Name == "mnuAdministracion"}}
+                        <i class="fa fa-id-card fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuDocumentosEntrada"}}
+                        <i class="fa fa-arrow-circle-up fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuInternalMovement"}}
+                        <i class="fa fa-exchange fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuDocumentosSalida"}}
+                        <i class="fa fa-arrow-circle-down fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuStock"}}
+                        <i class="fa fa-dropbox fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuInventory"}}
+                        <i class="fa fa-check fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuReports"}}
+                        <i class="fa fa-file-text fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuBilling"}}
+                        <i class="fa fa-usd fa-lg" aria-hidden="true"></i>
+                    {{else Name == "mnuInboundKPI"}}
+                        <i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>
+                    {{/if}}
+
+				{{:TextValue}}
+
+                </strong>
+				<ul>
+					{{for subMenus tmpl="#subMenu1"/}}
+				</ul>
+			</li>
+        </script>
+		
+		<script id="subMenu1" type="text/x-jsrender">
+            {{if subMenus.length == 0 }}
+                <li class="linkVerticalMenu">
+                    <a href="{{: AspxPage}}" 
+                        class="linkSecondLevel" target="_self">{{:TextValue}}</a>
+                </li>
+            {{else}}
+                <li>
+				    <strong>{{:TextValue}}</strong>
+				    <ul>
+					    {{for subMenus tmpl="#subMenu2"/}}
+				    </ul>
+			    </li>
+            {{/if}}	
+		</script>
+		
+		<script id="subMenu2" type="text/x-jsrender">
+			<li class="linkVerticalMenu">
+				<a href="{{: AspxPage}}" 
+                    class="linkSecondLevel" target="_self">{{:TextValue}}</a>
+			</li>
+		</script>
+
+        <script id="subMenuFiltered" type="text/x-jsrender">
+			<li class="linkVerticalMenu linksFiltered">
+				<a href="{{: AspxPage}}" 
+                    class="linkSecondLevel" target="_self">{{:TextValue}}</a>
+			</li>
+		</script>
+
+        <script id="SearchWithNoResults" type="text/x-jsrender">
+           <div class="alert alert-warning" id="divSearchWithNoResults">
+                {{: Text}}
+            </div>
+        </script>
+
+
+        <!-- menu vertical -->
+        <div id="sidedrawer" class="mui--no-user-select">
+           
+            <div id="sidedrawer-brand" class="mui--appbar-line-height">
+                <span class="mui--text-title"></span>
+               
+            </div>
+
+            <div id="userHeader" class="center-block">
+                 
+                <i class="fa fa-user-circle-o fa-5x center-block" aria-hidden="true" style="width: 50%; color: white;"></i>
+                <asp:Label ID="lblUserName" runat="server" Text="" CssClass="lblUserName" ToolTip="Ir a Inicio" onclick="return Home()"  />               
+                <asp:Repeater ID="rpRoles" runat="server">
+                    <HeaderTemplate>
+                        <ul class="list-group" style="padding-right: 8px; margin-bottom: 10px;">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <li class="list-group-item" style="padding: 3px 3px;">
+                            <asp:Label runat="server" ID="lblRole" text='<%# Eval("Name") %>' />
+                        </li>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </ul>
+                    </FooterTemplate>
+                </asp:Repeater>
+                <asp:DropDownList ID="ddlWarehouse" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlWarehouse_SelectedIndexChanged" AutoPostBack="true" EnableTheming="false"/>
+                <asp:DropDownList ID="ddlOwner" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlOwner_SelectedIndexChanged" AutoPostBack="true" EnableTheming="false"/>
+            </div>
+
+            <div>
+                <input type="search" id="txtSearchMenu" class="form-control" placeholder="Buscar" />
+            </div>
+            <div class="mui-divider">
+            </div>
+
+            <ul>
+                
+            </ul>
+        </div>
+
+      <!-- Desktop Header Section -->
+        <header id="header">
+          <div class="mui-appbar mui--appbar-line-height">
+            <div class="mui-container-fluid">
+                <div id="containerHamburgerMenu">
+                    <a id="hamburgerMenu" class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">
+                        <div id="logo">
+                            <h2>
+                                <img alt="logo" runat="server" class="logoMenu" src="~/WebResources/Images/Menu/menu_logo.png" />
+                            </h2>
+                        </div>
+                        <div id="pagePath">
+                        </div>
+                    </a>
+                </div>
+              <span class="mui--text-title mui--visible-xs-inline-block mui--visible-sm-inline-block"></span>
+            </div>
+          </div>
+
+             <div id="barra_menu">
+                 <div id="cerrar_sesion">
+                     <i class="fa fa-times fa-2x" aria-hidden="true" onclick="return LogOut()"></i>
+                 </div>
+             </div>
+        </header>
+         
+        <%-- Header Panel --%>       
+        <asp:Panel ID="pnlHeader" runat="server">
+            <%-- Barra de Tareas --%>
+            <asp:UpdatePanel ID="upTaskBar" runat="server" UpdateMode="Always">
+                <ContentTemplate>  
+                    <webUc:ucTaskBar id="ucTaskBarContent" runat="server" /> 
+               </ContentTemplate>
+            <Triggers>
+                <asp:PostBackTrigger ControlID="ucTaskBarContent$btnExcel" />
+                <asp:PostBackTrigger ControlID="ucTaskBarContent$btnExcelDetail" />
+            </Triggers>
+            </asp:UpdatePanel> 	 
+            <asp:UpdateProgress ID="uprTaskBar" runat="server" AssociatedUpdatePanelID="upTaskBar" DisplayAfter="20" DynamicLayout="true">
+                <ProgressTemplate>                        
+                    <div class="divProgress">
+                        <img src="../../WebResources/Images/Buttons/icon_progress.gif" />
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+            <webUc:UpdateProgressOverlayExtender ID="muprTaskBar" runat="server" ControlToOverlayID="divTop" CssClass="updateProgress" TargetControlID="uprTaskBar" />    
+         
+            <%-- Barra de Filtros --%>                 
+            <asp:UpdatePanel ID="upFilter" runat="server" UpdateMode="Conditional">
+                <ContentTemplate>  
+                    <div id="divMainFilter" runat="server">   
+                        <webUc:ucMainFilter id="ucMainFilterContent" runat="server"/>                                  
+                    </div>    
+               </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="ctl00$ucTaskBarContent$btnRefresh" EventName="Click" />
+                <asp:AsyncPostBackTrigger ControlID="ctl00$ucMainFilterContent$btnSearch" EventName="Click" />
+            </Triggers>
+            </asp:UpdatePanel>
+            <asp:UpdateProgress ID="uprFilter" runat="server" AssociatedUpdatePanelID="upFilter" DisplayAfter="20" DynamicLayout="true">
+                <ProgressTemplate>                        
+                    <div class="divProgress">
+                        <img src="../../WebResources/Images/Buttons/icon_progress.gif" />
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
+            <webUc:UpdateProgressOverlayExtender ID="muprFilter" runat="server" ControlToOverlayID="divTop" CssClass="updateProgress" TargetControlID="uprFilter" />    
+            
+            
+        </asp:Panel>
+        <%-- FIN Header Panel --%>       
+          
+        <%-- Main Panel --%>         
+        <div id="divTop" runat="server">   
+            <asp:ContentPlaceHolder id="MainContent" runat="server" />
+        </div>                                    
+        
+            <asp:UpdatePanel ID="upStatusBarContent" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                    <asp:ContentPlaceHolder id="StatusContent" runat="server" />
+               </ContentTemplate>
+            </asp:UpdatePanel>   
+            
+            <asp:UpdateProgress ID="uprStatusBarContent" runat="server" AssociatedUpdatePanelID="upStatusBarContent" DisplayAfter="20" DynamicLayout="true">
+                <ProgressTemplate>                        
+                    <div class="divProgress">
+                        <img src="../../WebResources/Images/Buttons/icon_progress.gif" />   
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>  
+            
+            <webUc:UpdateProgressOverlayExtender ID="muprStatusBarContent" runat="server" ControlToOverlayID="divTop" CssClass="updateProgress" TargetControlID="uprStatusBarContent" />                   
+        <%-- FIN Main Panel --%>         
+
+        <%-- Error Panel --%>       
+        <asp:UpdatePanel ID="upError" runat="server" UpdateMode="Always">
+            <ContentTemplate>               
+                <%-- Panel de Error --%>        
+                <webUc:ucError id="ucContentError" runat="server" Visible="false"/>     
+                
+                <%-- Panel de Mensajes --%>        
+                <webUc:ucDialog id="ucContentDialog" runat="server" Visible="false"/>     
+            </ContentTemplate>
+        </asp:UpdatePanel> 	
+        
+        <asp:UpdateProgress ID="uprError" runat="server" AssociatedUpdatePanelID="upError" DisplayAfter="20" DynamicLayout="true">
+            <ProgressTemplate>                        
+                <div class="divProgress">
+                    <img src="../../WebResources/Images/Buttons/icon_progress.gif" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+                    
+        <webUc:UpdateProgressOverlayExtender ID="muprError" runat="server" ControlToOverlayID="divTop" CssClass="updateProgress" TargetControlID="uprError" />    
+        <%-- FIN Error Panel --%>       
+            
+        <%-- Mensajes de Confirmacion y Auxiliares --%>                        
+    	<asp:Label id="lblEmptyGridText" runat="server" Text="No se han encontrado registros." Visible="false" />    	    	    	    	
+    	<asp:Label id="lblNoDetails" runat="server" Text="No se han encontrado detalles." Visible="false" />    	
+        <asp:Label ID="lblEmptyRow" runat="server" Text="(Seleccione....)" Visible="false" />  
+        <asp:Label ID="lblAllRows" runat="server" Text="(Todos)" Visible="false" />
+        <asp:Label ID="lblYes" runat="server" Text="Si" Visible="false" />  	
+        <asp:Label ID="lblNo" runat="server" Text="No" Visible="false" />  	
+        <asp:Label ID="lblAll" runat="server" Text="Todos" Visible="false" />  	
+        <asp:Label ID="lblTotal" runat="server" Text="Total: " Visible="false" />  	
+        <asp:Label ID="lblAsociadas" runat="server" Text="Total Asociadas: " Visible="false" />  	
+        <asp:Label ID="lblSinAsociar" runat="server" Text="Total Sin asociar: " Visible="false" />  	
+        <asp:Label ID="lblToolTipEdit" runat="server" Text="Editar" Visible="false" />  	
+        <asp:Label ID="lblToolTipDelete" runat="server" Text="Eliminar" Visible="false" />  	
+        <asp:Label ID="lblToolTipSelect" runat="server" Text="Seleccionar" Visible="false" />
+        <asp:Label ID="lblToolTipClose" runat="server" Text="Cerrar" Visible="false" />
+        <asp:Label ID="lblToolTipFilter" runat="server" Text="Filtro" Visible="false" />
+
+        <asp:Label ID="lblGlnIsNotNumeric" runat="server" Text="Código GLN debe ser Numérico." Visible="false" />
+        <asp:Label ID="lblGlnLengthInvalid" runat="server" Text="Largo del Código GLN debe ser 13." Visible="false" />
+        <asp:Label ID="lblGlnCheckDigit" runat="server" Text="Dígito Verificador del Código GLN no es Válido." Visible="false" />
+        
+        <%-- FIN Mensajes de Confirmacion y Auxiliares --%>                                 	
+   </form>
+    </body>
+</html>

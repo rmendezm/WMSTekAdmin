@@ -1,0 +1,7 @@
+﻿.modalBox{
+    overflow: visible !important;
+}
+
+.ajax__calendar_body{
+    max-width: 160px !important;
+}

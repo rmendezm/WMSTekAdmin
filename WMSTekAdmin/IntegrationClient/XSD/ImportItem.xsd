@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Items">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element  maxOccurs="unbounded" name="Item">
+	        <xs:complexType>
+		        <xs:sequence>
+			        <xs:element name="Code" type="xs:string" />
+			        <xs:element name="AltCode" type="xs:string" />
+			        <xs:element name="Description" type="xs:string" />           
+			        <xs:element name="LongName" type="xs:string" />
+			        <xs:element name="ShortName" type="xs:string" />
+			        <xs:element name="Status" type="boolean" />
+			        <xs:element name="Comment" type="xs:string" />
+			        <xs:element name="ShelfLife" type="xs:integer" />
+			        <xs:element name="Expiration" type="xs:integer" />
+			        <xs:element name="CtrlSerialInbound" type="boolean" />
+			        <xs:element name="CtrlSerialInternal" type="boolean" />
+			        <xs:element name="CtrlSerialOutbound" type="boolean" />
+			        <xs:element name="LotControlInbound" type="boolean" />
+			        <xs:element name="LotControlInternal" type="boolean" />
+			        <xs:element name="LotControlOutbound" type="boolean" />
+			        <xs:element name="Weight" type="xs:decimal" />
+			        <xs:element name="Volume" type="xs:decimal" />
+			        <xs:element name="Length" type="xs:decimal" />
+			        <xs:element name="Width" type="xs:decimal" />
+			        <xs:element name="Height" type="xs:decimal" />
+			        <xs:element name="NestedVolume" type="xs:decimal" />
+			        <xs:element name="InspectionRequerid" type="boolean" />
+			        <xs:element name="InspectionCode" type="xs:string" />
+			        <xs:element name="CtrlExpiration" type="boolean" />
+			        <xs:element name="CtrlFabrication" type="boolean" />
+			        <xs:element name="Acumulable" type="boolean" />
+			        <xs:element name="ReOrderPoint" type="xs:decimal" />
+			        <xs:element name="ReOrderQty" type="xs:decimal" />
+			        <xs:element name="PalletQty" type="xs:integer" />
+			        <xs:element name="CutMinimum" type="xs:integer" />
+			        <xs:element name="Originator" type="xs:string" />
+			        <xs:element name="VasProfile" type="xs:string" />
+			        <xs:element name="Hazard" type="boolean" />
+			        <xs:element name="Price" type="xs:decimal" />
+			        <xs:element name="InventoryType" type="xs:string" />
+			        <xs:element name="StackingSequence" type="xs:integer" />
+			        <xs:element name="CommentControl" type="boolean" />
+			        <xs:element name="CompatibilityCode" type="xs:string" />
+			        <xs:element name="MsdsUrl" type="xs:string" />
+			        <xs:element name="PictureUrl" type="xs:string" />
+              <xs:element name="GrpClass1" type="xs:string" />
+              <xs:element name="GrpClass2" type="xs:string" />
+              <xs:element name="GrpClass3" type="xs:string" />
+              <xs:element name="GrpClass4" type="xs:string" />
+              <xs:element name="GrpClass5" type="xs:string" />
+              <xs:element name="GrpClass6" type="xs:string" />
+              <xs:element name="GrpClass7" type="xs:string" />
+              <xs:element name="GrpClass8" type="xs:string" />
+              <xs:element name="SpecialField1" type="xs:string" />
+			        <xs:element name="SpecialField2" type="xs:string" />
+			        <xs:element name="SpecialField3" type="xs:string" />
+			        <xs:element name="SpecialField4" type="xs:string" />
+              <xs:element name="GrpItem1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="GrpItem2">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="GrpItem3">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Owner">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Code" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+		        </xs:sequence>
+	        </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+	<xs:simpleType name="reqString">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="boolean">
+		<xs:restriction base="xs:boolean">
+			<!--<xs:enumeration value="0" />
+			<xs:enumeration value="1" />-->
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="range0_999999">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="999999"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
